@@ -48,6 +48,8 @@ void Widget::paintGL() {
 	shaderProgram.setUniformValue("u_modelMatrix", mMatrix);
 	shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
 	shaderProgram.setUniformValue("u_texture", 0);
+	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
+	shaderProgram.setUniformValue("u_lightPower", 5.0f);
 
 	arrayBuffer.bind();
 
@@ -62,6 +64,12 @@ void Widget::paintGL() {
 	int texLoc = shaderProgram.attributeLocation("a_texcoord");
 	shaderProgram.enableAttributeArray(texLoc);
 	shaderProgram.setAttributeBuffer(texLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
+
+	offset += sizeof(QVector2D);
+
+	int normLoc = shaderProgram.attributeLocation("a_normal");
+	shaderProgram.enableAttributeArray(normLoc);
+	shaderProgram.setAttributeBuffer(normLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
 
 	indexBuffer.bind();
 
@@ -91,13 +99,18 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 }
 
 void Widget::initShaders() {
-	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "./VertexShader.vsh"))
+	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "./VertexShader.vsh")) {
+		QString log = shaderProgram.log();
 		close();
-	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, "./FragmentShader.fsh"))
+	}
+	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, "./FragmentShader.fsh")) {
+		QString log = shaderProgram.log();
 		close();
-	if (!shaderProgram.link())
+	}
+	if (!shaderProgram.link()) {
+		QString log = shaderProgram.log();
 		close();
-
+	}
 }
 
 void Widget::initCube(float width) {
