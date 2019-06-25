@@ -23,7 +23,7 @@ public:
 	~SimpleObject3D();
 	void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image);
 	void draw(QOpenGLShaderProgram *shaderProgram, QOpenGLFunctions *functions);
-
+	void translate(const QVector3D &translateVector);
 
 private:
 	QOpenGLBuffer vertexBuffer;

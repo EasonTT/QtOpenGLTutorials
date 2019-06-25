@@ -16,7 +16,10 @@ void Widget::initializeGL() {
 
 	// initialize shaders
 	initShaders();
-	initCube(1.0);
+	initCube(0.5);
+	objects[0]->translate(QVector3D(-1.0, 0.0, 0.0));
+	initCube(0.5);
+	objects[1]->translate(QVector3D(1.0, 0.0, 0.0));
 }
 
 void Widget::resizeGL(int width, int height) {

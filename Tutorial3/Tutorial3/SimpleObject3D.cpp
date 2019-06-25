@@ -94,3 +94,7 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 	indexBuffer.release();
 	texture->release();
 }
+
+void SimpleObject3D::translate(const QVector3D& translateVector) {
+	modelMatrix.translate(translateVector);
+}
