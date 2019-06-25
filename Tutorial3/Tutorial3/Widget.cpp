@@ -1,7 +1,7 @@
 #include "Widget.h"
 
 Widget::Widget(QWidget* parent) :
-	QOpenGLWidget(parent), texture(0), indexBuffer(QOpenGLBuffer::IndexBuffer) {
+	QOpenGLWidget(parent)/*, texture(0), indexBuffer(QOpenGLBuffer::IndexBuffer)*/ {
 }
 
 Widget::~Widget() {
@@ -31,49 +31,53 @@ void Widget::resizeGL(int width, int height) {
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	QMatrix4x4 mMatrix;
-	mMatrix.setToIdentity();
-	mMatrix.translate(0.0, 0.0, -5.0);
-	//mMatrix.rotate(30, 1.0, 0.0, 0.0);
-	//mMatrix.rotate(30, 0.0, 1.0, 0.0);
-	mMatrix.rotate(rotation);
-
 	QMatrix4x4 vMatrix;
 	vMatrix.setToIdentity();
+	vMatrix.translate(0.0, 0.0, -5.0);
+	//mMatrix.rotate(30, 1.0, 0.0, 0.0);
+	//mMatrix.rotate(30, 0.0, 1.0, 0.0);
+	vMatrix.rotate(rotation);
 
-	texture->bind();
+	//QMatrix4x4 mMatrix;
+	//mMatrix.setToIdentity();
+
+	//texture->bind();
 
 	shaderProgram.bind();
 	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
-	shaderProgram.setUniformValue("u_modelMatrix", mMatrix);
+	//shaderProgram.setUniformValue("u_modelMatrix", mMatrix);
 	shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
-	shaderProgram.setUniformValue("u_texture", 0);
+	//shaderProgram.setUniformValue("u_texture", 0);
 	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
 	shaderProgram.setUniformValue("u_lightPower", 5.0f);
 
-	arrayBuffer.bind();
+	for (int i = 0; i < objects.size(); i++) {
+		objects[i]->draw(&shaderProgram, context()->functions());
+	}
 
-	int offset = 0;
+	//arrayBuffer.bind();
 
-	int verLoc = shaderProgram.attributeLocation("a_position");
-	shaderProgram.enableAttributeArray(verLoc);
-	shaderProgram.setAttributeBuffer(verLoc, GL_FLOAT, offset, 3, sizeof(Vertex));
+	//int offset = 0;
 
-	offset += sizeof(QVector3D);
+	//int verLoc = shaderProgram.attributeLocation("a_position");
+	//shaderProgram.enableAttributeArray(verLoc);
+	//shaderProgram.setAttributeBuffer(verLoc, GL_FLOAT, offset, 3, sizeof(Vertex));
 
-	int texLoc = shaderProgram.attributeLocation("a_texcoord");
-	shaderProgram.enableAttributeArray(texLoc);
-	shaderProgram.setAttributeBuffer(texLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
+	//offset += sizeof(QVector3D);
 
-	offset += sizeof(QVector2D);
+	//int texLoc = shaderProgram.attributeLocation("a_texcoord");
+	//shaderProgram.enableAttributeArray(texLoc);
+	//shaderProgram.setAttributeBuffer(texLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
 
-	int normLoc = shaderProgram.attributeLocation("a_normal");
-	shaderProgram.enableAttributeArray(normLoc);
-	shaderProgram.setAttributeBuffer(normLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
+	//offset += sizeof(QVector2D);
 
-	indexBuffer.bind();
+	//int normLoc = shaderProgram.attributeLocation("a_normal");
+	//shaderProgram.enableAttributeArray(normLoc);
+	//shaderProgram.setAttributeBuffer(normLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
 
-	glDrawElements(GL_TRIANGLES, indexBuffer.size(), GL_UNSIGNED_INT, 0);
+	//indexBuffer.bind();
+
+	//glDrawElements(GL_TRIANGLES, indexBuffer.size(), GL_UNSIGNED_INT, 0);
 
 }
 
@@ -151,25 +155,27 @@ void Widget::initCube(float width) {
 	for (int i = 0; i < 24; i += 4)
 		indices << i + 0 << i + 1 << i + 2 << i + 2 << i + 1 << i + 3;
 
-	arrayBuffer.create();
-	arrayBuffer.bind();
-	arrayBuffer.allocate(vertices.constData(), vertices.size() * sizeof(Vertex));
-	arrayBuffer.release();
+	objects << new SimpleObject3D(vertices, indices, QImage("./cube.jpg"));
 
-	indexBuffer.create();
-	indexBuffer.bind();
-	indexBuffer.allocate(indices.constData(), indices.size() * sizeof(GLuint));
-	indexBuffer.release();
+	//arrayBuffer.create();
+	//arrayBuffer.bind();
+	//arrayBuffer.allocate(vertices.constData(), vertices.size() * sizeof(Vertex));
+	//arrayBuffer.release();
 
-	texture = new QOpenGLTexture(QImage("./cube.jpg").mirrored());
+	//indexBuffer.create();
+	//indexBuffer.bind();
+	//indexBuffer.allocate(indices.constData(), indices.size() * sizeof(GLuint));
+	//indexBuffer.release();
 
-	// Set nearest filtering mode for texture minification
-	texture->setMinificationFilter(QOpenGLTexture::Linear);
+	//texture = new QOpenGLTexture(QImage("./cube.jpg").mirrored());
 
-	// Set bilinear filtering mode for texture magnification
-	texture->setMagnificationFilter(QOpenGLTexture::Linear);
+	//// Set nearest filtering mode for texture minification
+	//texture->setMinificationFilter(QOpenGLTexture::Linear);
 
-	// Wrap texture coordinates by repreating
-	// f. ex. texture coordinate (1.1, 1.2) is same as 0.1, 0.2;
-	texture->setWrapMode(QOpenGLTexture::Repeat);
+	//// Set bilinear filtering mode for texture magnification
+	//texture->setMagnificationFilter(QOpenGLTexture::Linear);
+
+	//// Wrap texture coordinates by repreating
+	//// f. ex. texture coordinate (1.1, 1.2) is same as 0.1, 0.2;
+	//texture->setWrapMode(QOpenGLTexture::Repeat);
 }

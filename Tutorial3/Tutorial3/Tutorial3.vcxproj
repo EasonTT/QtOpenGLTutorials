@@ -114,6 +114,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleObject3D.cpp" />
     <ClCompile Include="Tutorial3.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
@@ -127,6 +128,7 @@
     <QtRcc Include="Tutorial3.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SimpleObject3D.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
