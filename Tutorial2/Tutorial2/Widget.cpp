@@ -38,23 +38,28 @@ void Widget::paintGL() {
 	//mMatrix.rotate(30, 0.0, 1.0, 0.0);
 	mMatrix.rotate(rotation);
 
+	QMatrix4x4 vMatrix;
+	vMatrix.setToIdentity();
+
 	texture->bind();
 
 	shaderProgram.bind();
-	shaderProgram.setUniformValue("qt_ModelViewProjectionMatrix", pMatrix * mMatrix);
-	shaderProgram.setUniformValue("qt_Texture0", 0);
+	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
+	shaderProgram.setUniformValue("u_modelMatrix", mMatrix);
+	shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
+	shaderProgram.setUniformValue("u_texture", 0);
 
 	arrayBuffer.bind();
 
 	int offset = 0;
 
-	int verLoc = shaderProgram.attributeLocation("qt_Vertex");
+	int verLoc = shaderProgram.attributeLocation("a_position");
 	shaderProgram.enableAttributeArray(verLoc);
 	shaderProgram.setAttributeBuffer(verLoc, GL_FLOAT, offset, 3, sizeof(Vertex));
 
 	offset += sizeof(QVector3D);
 
-	int texLoc = shaderProgram.attributeLocation("qt_MultiTexCoord0");
+	int texLoc = shaderProgram.attributeLocation("a_texcoord");
 	shaderProgram.enableAttributeArray(texLoc);
 	shaderProgram.setAttributeBuffer(texLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
 
