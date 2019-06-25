@@ -28,9 +28,6 @@ protected:
 private:
 	QMatrix4x4 pMatrix;
 	QOpenGLShaderProgram shaderProgram;
-	//QOpenGLTexture* texture;
-	//QOpenGLBuffer arrayBuffer;
-	//QOpenGLBuffer indexBuffer;
 
 	QVector2D mousePosition;
 	QQuaternion rotation;
