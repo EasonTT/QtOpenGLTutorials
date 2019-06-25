@@ -4,6 +4,7 @@
 #include <qopenglshaderprogram.h>
 #include <qopengltexture.h>
 #include <qopenglbuffer.h>
+#include <QMouseEvent>
 
 struct Vertex {
 	Vertex() {};
@@ -26,6 +27,9 @@ protected:
 	void resizeGL(int width, int height);
 	void paintGL();
 
+	void mousePressEvent(QMouseEvent* event);
+	void mouseMoveEvent(QMouseEvent* event);
+
 	void initShaders();
 	void initCube(float width);
 
@@ -35,5 +39,8 @@ private:
 	QOpenGLTexture* texture;
 	QOpenGLBuffer arrayBuffer;
 	QOpenGLBuffer indexBuffer;
+
+	QVector2D mousePosition;
+	QQuaternion rotation;
 };
 
