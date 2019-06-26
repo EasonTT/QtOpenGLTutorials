@@ -118,17 +118,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimpleObject3D.cpp" />
     <ClCompile Include="Skybox.cpp" />
-    <ClCompile Include="Tutorial7.cpp" />
+    <ClCompile Include="Tutorial8.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Tutorial7.h" />
+    <QtMoc Include="Tutorial8.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Tutorial7.ui" />
+    <QtUic Include="Tutorial8.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Tutorial7.qrc" />
+    <QtRcc Include="Tutorial8.qrc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera3D.h" />
@@ -137,26 +137,6 @@
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="Transformational.h" />
     <ClInclude Include="Widget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Skybox.vsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </FxCompile>
-    <FxCompile Include="Object.vsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Object.fsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </None>
-    <None Include="Skybox.fsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
