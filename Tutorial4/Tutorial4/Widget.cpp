@@ -49,8 +49,6 @@ void Widget::initializeGL() {
 	groups[2]->addObject(groups[1]);
 
 	transformObjects.append(groups[2]);
-
-	timer.start(30, this);
 }
 
 void Widget::resizeGL(int width, int height) {
@@ -108,35 +106,6 @@ void Widget::wheelEvent(QWheelEvent* event) {
 	else if (event->delta() < 0) {
 		z -= 0.25;
 	}
-	update();
-}
-
-void Widget::timerEvent(QTimerEvent* event) {
-	for (int i = 0; i < objects.size(); i++) {
-		if (i % 2 == 0) {
-			objects[i]->rotate(QQuaternion::fromAxisAndAngle(1.0, 0.0, 0.0, qSin(angleObject)));
-			objects[i]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, qCos(angleObject)));
-		}
-		else {
-			objects[i]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, qSin(angleObject)));
-			objects[i]->rotate(QQuaternion::fromAxisAndAngle(1.0, 0.0, 0.0, qCos(angleObject)));
-		}
-	}
-
-	groups[0]->rotate(QQuaternion::fromAxisAndAngle(0.0, 0.0, 1.0, qSin(angleGroup1)));
-	groups[0]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, -qSin(angleGroup1)));
-
-	groups[1]->rotate(QQuaternion::fromAxisAndAngle(1.0, 0.0, 0.0, qCos(angleGroup1)));
-	groups[1]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, -qCos(angleGroup1)));
-
-	groups[2]->rotate(QQuaternion::fromAxisAndAngle(1.0, 0.0, 0.0, qSin(angleMain)));
-	groups[2]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, qCos(angleMain)));
-
-	angleObject += M_PI / 180.0f;
-	angleGroup1 += M_PI / 360.0f;
-	angleGroup2 -= M_PI / 360.0f;
-	angleMain += M_PI / 720.0f;
-
 	update();
 }
 

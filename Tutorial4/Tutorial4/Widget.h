@@ -8,8 +8,6 @@
 #include "SimpleObject3D.h"
 #include "Group3D.h"
 #include <qopenglcontext.h>
-#include <qbasictimer.h>
-#include <QtMath>
 
 class Widget :
 	public QOpenGLWidget {
@@ -25,7 +23,6 @@ protected:
 	void mousePressEvent(QMouseEvent* event);
 	void mouseMoveEvent(QMouseEvent* event);
 	void wheelEvent(QWheelEvent* event);
-	void timerEvent(QTimerEvent* event);
 
 	void initShaders();
 	void initCube(float width);
@@ -42,11 +39,5 @@ private:
 	QVector<Group3D *> groups;
 	QVector<Transformational*> transformObjects;
 
-	QBasicTimer timer;
-
-	float angleObject;
-	float angleGroup1;
-	float angleGroup2;
-	float angleMain;
 };
 
