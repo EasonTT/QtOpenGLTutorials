@@ -67,6 +67,8 @@ void Widget::initializeGL() {
 
 	groups[0]->addObject(camera);
 
+	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
+
 	timer.start(30, this);
 }
 
@@ -74,23 +76,29 @@ void Widget::resizeGL(int width, int height) {
 	float aspect = width / (float)height;
 
 	pMatrix.setToIdentity();
-	pMatrix.perspective(45, aspect, 0.01f, 100.0f);
+	pMatrix.perspective(45, aspect, 0.01f, 500.0f);
 }
 
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	shaderProgram.bind();
-	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
-	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
-	shaderProgram.setUniformValue("u_lightPower", 5.0f);
+	skyboxShader.bind();
+	skyboxShader.setUniformValue("u_projectionMatrix", pMatrix);
 
-	camera->draw(&shaderProgram);
+	camera->draw(&skyboxShader);
+	skybox->draw(&skyboxShader, context()->functions());
+	skyboxShader.release();
 
+	objectShader.bind();
+	objectShader.setUniformValue("u_projectionMatrix", pMatrix);
+	objectShader.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
+	objectShader.setUniformValue("u_lightPower", 5.0f);
+
+	camera->draw(&objectShader);
 	for (int i = 0; i < transformObjects.size(); i++) {
-		transformObjects[i]->draw(&shaderProgram, context()->functions());
+		transformObjects[i]->draw(&objectShader, context()->functions());
 	}
-
+	objectShader.release();
 }
 
 void Widget::mousePressEvent(QMouseEvent* event) {
@@ -180,16 +188,29 @@ void Widget::keyPressEvent(QKeyEvent* event) {
 }
 
 void Widget::initShaders() {
-	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "./VertexShader.vsh")) {
-		QString log = shaderProgram.log();
+	if (!objectShader.addShaderFromSourceFile(QOpenGLShader::Vertex, "./Object.vsh")) {
+		QString log = objectShader.log();
 		close();
 	}
-	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, "./FragmentShader.fsh")) {
-		QString log = shaderProgram.log();
+	if (!objectShader.addShaderFromSourceFile(QOpenGLShader::Fragment, "./Object.fsh")) {
+		QString log = objectShader.log();
 		close();
 	}
-	if (!shaderProgram.link()) {
-		QString log = shaderProgram.log();
+	if (!objectShader.link()) {
+		QString log = objectShader.log();
+		close();
+	}
+
+	if (!skyboxShader.addShaderFromSourceFile(QOpenGLShader::Vertex, "./Skybox.vsh")) {
+		QString log = skyboxShader.log();
+		close();
+	}
+	if (!skyboxShader.addShaderFromSourceFile(QOpenGLShader::Fragment, "./Skybox.fsh")) {
+		QString log = skyboxShader.log();
+		close();
+	}
+	if (!skyboxShader.link()) {
+		QString log = skyboxShader.log();
 		close();
 	}
 }

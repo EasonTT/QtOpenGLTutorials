@@ -48,6 +48,9 @@
     <ClCompile Include="Camera3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Tutorial7.h">
@@ -80,5 +83,16 @@
     <ClInclude Include="Transformational.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Object.vsh" />
+    <FxCompile Include="Skybox.vsh" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Object.fsh" />
+    <None Include="Skybox.fsh" />
   </ItemGroup>
 </Project>

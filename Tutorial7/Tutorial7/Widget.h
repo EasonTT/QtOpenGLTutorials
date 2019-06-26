@@ -12,6 +12,7 @@
 #include <QtMath>
 #include "Camera3D.h"
 #include <QKeyEvent>
+#include "Skybox.h"
 
 class Widget :
 	public QOpenGLWidget {
@@ -35,8 +36,8 @@ protected:
 
 private:
 	QMatrix4x4 pMatrix;
-	QOpenGLShaderProgram shaderProgram;
-
+	QOpenGLShaderProgram objectShader;
+	QOpenGLShaderProgram skyboxShader;
 	QVector2D mousePosition;
 
 	QVector<SimpleObject3D*> objects;
@@ -51,5 +52,6 @@ private:
 	float angleMain;
 
 	Camera3D* camera;
+	Skybox* skybox;
 };
 

@@ -6,6 +6,7 @@
 
 class Transformational {
 public:
+	virtual ~Transformational() {};
 	virtual void rotate(const QQuaternion& r) = 0;
 	virtual void translate(const QVector3D& t) = 0;
 	virtual void scale(const float& s) = 0;
