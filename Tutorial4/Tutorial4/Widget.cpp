@@ -2,6 +2,7 @@
 
 Widget::Widget(QWidget* parent) :
 	QOpenGLWidget(parent) {
+	z = -5.0;
 }
 
 Widget::~Widget() {
@@ -34,7 +35,7 @@ void Widget::paintGL() {
 
 	QMatrix4x4 vMatrix;
 	vMatrix.setToIdentity();
-	vMatrix.translate(0.0, 0.0, -5.0);
+	vMatrix.translate(0.0, 0.0, z);
 	vMatrix.rotate(rotation);
 
 	shaderProgram.bind();
@@ -67,6 +68,16 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 
 	rotation = QQuaternion::fromAxisAndAngle(axis, angle) * rotation;
 
+	update();
+}
+
+void Widget::wheelEvent(QWheelEvent* event) {
+	if (event->delta() > 0) {
+		z += 0.25;
+	}
+	else if (event->delta() < 0) {
+		z -= 0.25;
+	}
 	update();
 }
 

@@ -21,6 +21,7 @@ protected:
 
 	void mousePressEvent(QMouseEvent* event);
 	void mouseMoveEvent(QMouseEvent* event);
+	void wheelEvent(QWheelEvent* event);
 
 	void initShaders();
 	void initCube(float width);
@@ -31,6 +32,7 @@ private:
 
 	QVector2D mousePosition;
 	QQuaternion rotation;
+	float z;
 
 	QVector<SimpleObject3D*> objects;
 };
