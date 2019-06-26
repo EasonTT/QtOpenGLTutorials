@@ -10,6 +10,7 @@
 #include <qopenglcontext.h>
 #include <qbasictimer.h>
 #include <QtMath>
+#include "Camera3D.h"
 
 class Widget :
 	public QOpenGLWidget {
@@ -35,8 +36,8 @@ private:
 	QOpenGLShaderProgram shaderProgram;
 
 	QVector2D mousePosition;
-	QQuaternion rotation;
-	float z;
+	//QQuaternion rotation;
+	//float z;
 
 	QVector<SimpleObject3D*> objects;
 	QVector<Group3D*> groups;
@@ -48,5 +49,7 @@ private:
 	float angleGroup1;
 	float angleGroup2;
 	float angleMain;
+
+	Camera3D* camera;
 };
 

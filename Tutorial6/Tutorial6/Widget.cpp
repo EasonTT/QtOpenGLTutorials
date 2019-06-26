@@ -2,10 +2,22 @@
 
 Widget::Widget(QWidget* parent) :
 	QOpenGLWidget(parent) {
-	z = -5.0;
+	//z = -5.0;
+	camera = new Camera3D;
+	camera->translate(QVector3D(0.0, 0.0, -5.0));
 }
 
 Widget::~Widget() {
+	delete camera;
+
+	for (int i = 0; i < objects.size(); i++)
+		delete objects[i];
+
+	for (int i = 0; i < groups.size(); i++)
+		delete groups[i];
+
+	for (int i = 0; i < transformObjects.size(); i++)
+		delete transformObjects[i];
 }
 
 void Widget::initializeGL() {
@@ -63,16 +75,18 @@ void Widget::resizeGL(int width, int height) {
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	QMatrix4x4 vMatrix;
-	vMatrix.setToIdentity();
-	vMatrix.translate(0.0, 0.0, z);
-	vMatrix.rotate(rotation);
+	//QMatrix4x4 vMatrix;
+	//vMatrix.setToIdentity();
+	//vMatrix.translate(0.0, 0.0, z);
+	//vMatrix.rotate(rotation);
 
 	shaderProgram.bind();
 	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
-	shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
+	//shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
 	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
 	shaderProgram.setUniformValue("u_lightPower", 5.0f);
+
+	camera->draw(&shaderProgram);
 
 	for (int i = 0; i < transformObjects.size(); i++) {
 		transformObjects[i]->draw(&shaderProgram, context()->functions());
@@ -96,17 +110,20 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 
 	QVector3D axis = QVector3D(diff.y(), diff.x(), 0.0);
 
-	rotation = QQuaternion::fromAxisAndAngle(axis, angle) * rotation;
+	//rotation = QQuaternion::fromAxisAndAngle(axis, angle) * rotation;
+	camera->rotate(QQuaternion::fromAxisAndAngle(axis, angle));
 
 	update();
 }
 
 void Widget::wheelEvent(QWheelEvent* event) {
 	if (event->delta() > 0) {
-		z += 0.25;
+		//z += 0.25;
+		camera->translate(QVector3D(0.0, 0.0, 0.25));
 	}
 	else if (event->delta() < 0) {
-		z -= 0.25;
+		//z -= 0.25;
+		camera->translate(QVector3D(0.0, 0.0, -0.25));
 	}
 	update();
 }

@@ -113,6 +113,7 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera3D.cpp" />
     <ClCompile Include="Group3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimpleObject3D.cpp" />
@@ -129,6 +130,7 @@
     <QtRcc Include="Tutorial6.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera3D.h" />
     <ClInclude Include="Group3D.h" />
     <ClInclude Include="SimpleObject3D.h" />
     <ClInclude Include="Transformational.h" />
