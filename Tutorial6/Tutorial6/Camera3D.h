@@ -17,5 +17,7 @@ private:
 	QVector3D t;
 	float s;
 	QMatrix4x4 g;
+
+	QMatrix4x4 viewMatrix;
 };
 

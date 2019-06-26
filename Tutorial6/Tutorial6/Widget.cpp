@@ -30,24 +30,25 @@ void Widget::initializeGL() {
 	// initialize shaders
 	initShaders();
 
-	float step = 2.0f;
+	float step = 1.0f;
 
 	groups.append(new Group3D);
-	for (float x = -step; x <= step; x += step) {
-		for (float y = -step; y <= step; y += step) {
-			for (float z = -step; z <= step; z += step) {
+	groups[0]->addObject(camera);
+	for (float x = -step; x <= step; x += 2 * step) {
+		for (float y = -step; y <= step; y += 2 * step) {
+			for (float z = -step; z <= step; z += 2 * step) {
 				initCube(0.5f);
 				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
 				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
 			}
 		}
 	}
-	groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
+	groups[0]->translate(QVector3D(-2.0, 0.0, 0.0));
 
 	groups.append(new Group3D);
-	for (float x = -step; x <= step; x += step) {
-		for (float y = -step; y <= step; y += step) {
-			for (float z = -step; z <= step; z += step) {
+	for (float x = -step; x <= step; x += 2 * step) {
+		for (float y = -step; y <= step; y += 2 * step) {
+			for (float z = -step; z <= step; z += 2 * step) {
 				initCube(0.5f);
 				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
 				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
@@ -113,7 +114,7 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 	//rotation = QQuaternion::fromAxisAndAngle(axis, angle) * rotation;
 	camera->rotate(QQuaternion::fromAxisAndAngle(axis, angle));
 
-	update();
+	//update();
 }
 
 void Widget::wheelEvent(QWheelEvent* event) {
@@ -125,7 +126,7 @@ void Widget::wheelEvent(QWheelEvent* event) {
 		//z -= 0.25;
 		camera->translate(QVector3D(0.0, 0.0, -0.25));
 	}
-	update();
+	//update();
 }
 
 void Widget::timerEvent(QTimerEvent* event) {
