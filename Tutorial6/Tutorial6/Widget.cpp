@@ -21,6 +21,9 @@ Widget::~Widget() {
 }
 
 void Widget::initializeGL() {
+
+	setFocusPolicy(Qt::StrongFocus);
+
 	// clear the screen with black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -33,7 +36,6 @@ void Widget::initializeGL() {
 	float step = 1.0f;
 
 	groups.append(new Group3D);
-	groups[0]->addObject(camera);
 	for (float x = -step; x <= step; x += 2 * step) {
 		for (float y = -step; y <= step; y += 2 * step) {
 			for (float z = -step; z <= step; z += 2 * step) {
@@ -63,6 +65,8 @@ void Widget::initializeGL() {
 
 	transformObjects.append(groups[2]);
 
+	groups[0]->addObject(camera);
+
 	timer.start(30, this);
 }
 
@@ -76,14 +80,8 @@ void Widget::resizeGL(int width, int height) {
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//QMatrix4x4 vMatrix;
-	//vMatrix.setToIdentity();
-	//vMatrix.translate(0.0, 0.0, z);
-	//vMatrix.rotate(rotation);
-
 	shaderProgram.bind();
 	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
-	//shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
 	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
 	shaderProgram.setUniformValue("u_lightPower", 5.0f);
 
@@ -111,7 +109,6 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 
 	QVector3D axis = QVector3D(diff.y(), diff.x(), 0.0);
 
-	//rotation = QQuaternion::fromAxisAndAngle(axis, angle) * rotation;
 	camera->rotate(QQuaternion::fromAxisAndAngle(axis, angle));
 
 	//update();
@@ -119,11 +116,9 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 
 void Widget::wheelEvent(QWheelEvent* event) {
 	if (event->delta() > 0) {
-		//z += 0.25;
 		camera->translate(QVector3D(0.0, 0.0, 0.25));
 	}
 	else if (event->delta() < 0) {
-		//z -= 0.25;
 		camera->translate(QVector3D(0.0, 0.0, -0.25));
 	}
 	//update();
@@ -155,6 +150,32 @@ void Widget::timerEvent(QTimerEvent* event) {
 	angleGroup2 -= M_PI / 360.0f;
 	angleMain += M_PI / 720.0f;
 
+	update();
+}
+
+void Widget::keyPressEvent(QKeyEvent* event) {
+
+	switch (event->key()) {
+	case Qt::Key_Left:
+		groups[0]->delObject(camera);
+		groups[1]->addObject(camera);
+		break;
+	case Qt::Key_Right:
+		groups[1]->delObject(camera);
+		groups[0]->addObject(camera);
+		break;
+	case Qt::Key_Down:
+		groups[0]->delObject(camera);
+		groups[1]->delObject(camera);
+		break;
+	case Qt::Key_Up:
+		groups[0]->delObject(camera);
+		groups[1]->delObject(camera);
+		QMatrix4x4 temp;
+		temp.setToIdentity();
+		camera->setGlobalTransform(temp);
+		break;
+	}
 	update();
 }
 

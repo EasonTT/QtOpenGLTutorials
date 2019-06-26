@@ -49,13 +49,5 @@ void Camera3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* funct
 
 	if (functions != 0) return;
 
-	//QMatrix4x4 viewMatrix;
-
-	//viewMatrix.setToIdentity();
-	//viewMatrix.translate(t);
-	//viewMatrix.rotate(r);
-	//viewMatrix.scale(s);
-	//viewMatrix = viewMatrix * g.inverted();
 	shaderProgram->setUniformValue("u_viewMatrix", viewMatrix);
-
 }

@@ -12,6 +12,8 @@ public:
 	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 
 	void addObject(Transformational* object);
+	void delObject(Transformational* object);
+	void delObject(const int& index);
 
 private:
 	QQuaternion r;

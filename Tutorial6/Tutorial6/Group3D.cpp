@@ -78,3 +78,11 @@ void Group3D::addObject(Transformational* object) {
 
 	objects[objects.size() - 1]->setGlobalTransform(localMatrix);
 }
+
+void Group3D::delObject(Transformational* object) {
+	objects.removeAll(object);
+}
+
+void Group3D::delObject(const int& index) {
+	objects.remove(index);
+}

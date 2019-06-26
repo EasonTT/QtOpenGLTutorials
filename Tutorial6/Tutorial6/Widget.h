@@ -11,6 +11,7 @@
 #include <qbasictimer.h>
 #include <QtMath>
 #include "Camera3D.h"
+#include <QKeyEvent>
 
 class Widget :
 	public QOpenGLWidget {
@@ -27,6 +28,7 @@ protected:
 	void mouseMoveEvent(QMouseEvent* event);
 	void wheelEvent(QWheelEvent* event);
 	void timerEvent(QTimerEvent* event);
+	void keyPressEvent(QKeyEvent* event);
 
 	void initShaders();
 	void initCube(float width);
@@ -36,8 +38,6 @@ private:
 	QOpenGLShaderProgram shaderProgram;
 
 	QVector2D mousePosition;
-	//QQuaternion rotation;
-	//float z;
 
 	QVector<SimpleObject3D*> objects;
 	QVector<Group3D*> groups;
