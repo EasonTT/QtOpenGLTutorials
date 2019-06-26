@@ -13,6 +13,8 @@
 #include "Camera3D.h"
 #include <QKeyEvent>
 #include "Skybox.h"
+#include <qstringlist.h>
+#include <qstring.h>
 
 class Widget :
 	public QOpenGLWidget {
@@ -33,6 +35,7 @@ protected:
 
 	void initShaders();
 	void initCube(float width);
+	void loadObj(const QString &path);
 
 private:
 	QMatrix4x4 pMatrix;

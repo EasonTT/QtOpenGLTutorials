@@ -45,7 +45,7 @@ void Widget::initializeGL() {
 			}
 		}
 	}
-	groups[0]->translate(QVector3D(-2.0, 0.0, 0.0));
+	groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
 
 	groups.append(new Group3D);
 	for (float x = -step; x <= step; x += 2 * step) {
@@ -57,13 +57,16 @@ void Widget::initializeGL() {
 			}
 		}
 	}
-	groups[1]->translate(QVector3D(4.0, 0.0, 0.0));
+	groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
 
 	groups.append(new Group3D);
 	groups[2]->addObject(groups[0]);
 	groups[2]->addObject(groups[1]);
 
 	transformObjects.append(groups[2]);
+
+	loadObj("./sphere.obj");
+	transformObjects.append(objects[objects.size() - 1]);
 
 	groups[0]->addObject(camera);
 
@@ -133,7 +136,7 @@ void Widget::wheelEvent(QWheelEvent* event) {
 }
 
 void Widget::timerEvent(QTimerEvent* event) {
-	for (int i = 0; i < objects.size(); i++) {
+	for (int i = 0; i < objects.size() - 1; i++) {
 		if (i % 2 == 0) {
 			objects[i]->rotate(QQuaternion::fromAxisAndAngle(1.0, 0.0, 0.0, qSin(angleObject)));
 			objects[i]->rotate(QQuaternion::fromAxisAndAngle(0.0, 1.0, 0.0, qCos(angleObject)));
@@ -175,7 +178,7 @@ void Widget::keyPressEvent(QKeyEvent* event) {
 	case Qt::Key_Down:
 		groups[0]->delObject(camera);
 		groups[1]->delObject(camera);
-		break;
+break;
 	case Qt::Key_Up:
 		groups[0]->delObject(camera);
 		groups[1]->delObject(camera);
@@ -254,4 +257,45 @@ void Widget::initCube(float width) {
 		indices << i + 0 << i + 1 << i + 2 << i + 2 << i + 1 << i + 3;
 
 	objects << new SimpleObject3D(vertices, indices, QImage("./cube.jpg"));
+}
+
+void Widget::loadObj(const QString& path) {
+	QFile objFile(path);
+	if (!objFile.exists()) {
+		return;
+	}
+
+	QVector<QVector3D> verCoords;
+	QVector<QVector2D> texCoords;
+	QVector<QVector3D> normals;
+	QVector<Vertex> vertices;
+	QVector<GLuint> indices;
+
+	objFile.open(QIODevice::ReadOnly);
+	QTextStream input(&objFile);
+
+	while (!input.atEnd()) {
+		QString line = input.readLine();
+		QStringList list = line.split(" ");
+		if (list[0] == "v") {
+			verCoords << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
+		}
+		else if (list[0] == "vt") {
+			texCoords << QVector2D(list[1].toFloat(), list[2].toFloat());
+		}
+		else if (list[0] == "vn"){
+			normals << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
+		}
+		else if (list[0] == "f") {
+			for (int i = 1; i <= 3; i++) {
+				QStringList v = list[i].split("/");
+				vertices.append(Vertex(verCoords[v[0].toLong() - 1], texCoords[v[1].toLong() - 1], normals[v[2].toLong() - 1]));
+				indices.append(indices.size());
+			}
+		}
+	}
+
+	objFile.close();
+
+	objects.append(new SimpleObject3D(vertices, indices, QImage("./cube.jpg")));
 }
