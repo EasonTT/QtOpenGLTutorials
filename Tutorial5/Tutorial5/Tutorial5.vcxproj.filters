@@ -33,7 +33,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tutorial4.cpp">
+    <ClCompile Include="Tutorial5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Widget.cpp">
@@ -47,17 +47,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Tutorial4.h">
+    <QtMoc Include="Tutorial5.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Tutorial4.ui">
+    <QtUic Include="Tutorial5.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Tutorial4.qrc">
+    <QtRcc Include="Tutorial5.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
@@ -68,17 +68,11 @@
     <ClInclude Include="SimpleObject3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transformational.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Group3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="VertexShader.vsh" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FragmentShader.fsh" />
+    <ClInclude Include="Transformational.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -39,7 +39,7 @@ private:
 	float z;
 
 	QVector<SimpleObject3D*> objects;
-	QVector<Group3D *> groups;
+	QVector<Group3D*> groups;
 	QVector<Transformational*> transformObjects;
 
 	QBasicTimer timer;

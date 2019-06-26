@@ -31,7 +31,7 @@ void Widget::initializeGL() {
 		}
 	}
 	groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
-	
+
 	groups.append(new Group3D);
 	for (float x = -step; x <= step; x += step) {
 		for (float y = -step; y <= step; y += step) {

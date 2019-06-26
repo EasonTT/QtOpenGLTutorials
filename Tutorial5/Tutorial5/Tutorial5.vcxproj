@@ -116,33 +116,23 @@
     <ClCompile Include="Group3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimpleObject3D.cpp" />
-    <ClCompile Include="Tutorial4.cpp" />
+    <ClCompile Include="Tutorial5.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Tutorial4.h" />
+    <QtMoc Include="Tutorial5.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Tutorial4.ui" />
+    <QtUic Include="Tutorial5.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Tutorial4.qrc" />
+    <QtRcc Include="Tutorial5.qrc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Group3D.h" />
     <ClInclude Include="SimpleObject3D.h" />
     <ClInclude Include="Transformational.h" />
     <ClInclude Include="Widget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="VertexShader.vsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FragmentShader.fsh">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
