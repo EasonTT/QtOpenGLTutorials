@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SimpleObject3D.h" />
+    <ClInclude Include="Transformational.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>

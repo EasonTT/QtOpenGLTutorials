@@ -27,7 +27,7 @@ void Widget::resizeGL(int width, int height) {
 	float aspect = width / (float)height;
 
 	pMatrix.setToIdentity();
-	pMatrix.perspective(45, aspect, 0.1f, 10.0f);
+	pMatrix.perspective(45, aspect, 0.001f, 10.0f);
 }
 
 void Widget::paintGL() {
