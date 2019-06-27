@@ -71,8 +71,9 @@ void Widget::initializeGL() {
 	groups[0]->addObject(camera);
 
 	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
+	//transformObjects.append(skybox);
 
-	timer.start(30, this);
+	timer.start(1000, this);
 }
 
 void Widget::resizeGL(int width, int height) {
@@ -85,13 +86,6 @@ void Widget::resizeGL(int width, int height) {
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	skyboxShader.bind();
-	skyboxShader.setUniformValue("u_projectionMatrix", pMatrix);
-
-	camera->draw(&skyboxShader);
-	skybox->draw(&skyboxShader, context()->functions());
-	skyboxShader.release();
-
 	objectShader.bind();
 	objectShader.setUniformValue("u_projectionMatrix", pMatrix);
 	objectShader.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
@@ -102,12 +96,20 @@ void Widget::paintGL() {
 		transformObjects[i]->draw(&objectShader, context()->functions());
 	}
 	objectShader.release();
+
+	skyboxShader.bind();
+	skyboxShader.setUniformValue("u_projectionMatrix", pMatrix);
+
+	camera->draw(&skyboxShader);
+	skybox->draw(&skyboxShader, context()->functions());
+	skyboxShader.release();
 }
 
 void Widget::mousePressEvent(QMouseEvent* event) {
 	if (event->buttons() == Qt::LeftButton)
 		mousePosition = QVector2D(event->localPos());
 	event->accept();
+	update();
 }
 
 void Widget::mouseMoveEvent(QMouseEvent* event) {
@@ -122,7 +124,7 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 
 	camera->rotate(QQuaternion::fromAxisAndAngle(axis, angle));
 
-	//update();
+	 update();
 }
 
 void Widget::wheelEvent(QWheelEvent* event) {
@@ -132,7 +134,7 @@ void Widget::wheelEvent(QWheelEvent* event) {
 	else if (event->delta() < 0) {
 		camera->translate(QVector3D(0.0, 0.0, -0.25));
 	}
-	//update();
+	update();
 }
 
 void Widget::timerEvent(QTimerEvent* event) {

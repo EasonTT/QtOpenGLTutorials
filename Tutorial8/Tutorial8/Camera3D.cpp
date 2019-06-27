@@ -7,47 +7,28 @@ Camera3D::Camera3D() {
 
 void Camera3D::rotate(const QQuaternion& r) {
 	this->r = r * this->r;
-
-	viewMatrix.setToIdentity();
-	viewMatrix.translate(t);
-	viewMatrix.rotate(r);
-	viewMatrix.scale(s);
-	viewMatrix = viewMatrix * g.inverted();
 }
 
 void Camera3D::translate(const QVector3D& t) {
 	this->t += t;
-
-	viewMatrix.setToIdentity();
-	viewMatrix.translate(t);
-	viewMatrix.rotate(r);
-	viewMatrix.scale(s);
-	viewMatrix = viewMatrix * g.inverted();
 }
 
 void Camera3D::scale(const float& s) {
 	this->s *= s;
-
-	viewMatrix.setToIdentity();
-	viewMatrix.translate(t);
-	viewMatrix.rotate(r);
-	viewMatrix.scale(s);
-	viewMatrix = viewMatrix * g.inverted();
 }
 
 void Camera3D::setGlobalTransform(const QMatrix4x4& g) {
 	this->g = g;
-
-	viewMatrix.setToIdentity();
-	viewMatrix.translate(t);
-	viewMatrix.rotate(r);
-	viewMatrix.scale(s);
-	viewMatrix = viewMatrix * g.inverted();
 }
 
 void Camera3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions) {
 
 	if (functions != 0) return;
 
+	viewMatrix.setToIdentity();
+	viewMatrix.translate(t);
+	viewMatrix.rotate(r);
+	viewMatrix.scale(s);
+	viewMatrix = viewMatrix * g.inverted();
 	shaderProgram->setUniformValue("u_viewMatrix", viewMatrix);
 }

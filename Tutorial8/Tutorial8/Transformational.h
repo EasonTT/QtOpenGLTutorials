@@ -13,4 +13,3 @@ public:
 	virtual void setGlobalTransform(const QMatrix4x4& g) = 0;
 	virtual void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions) = 0;
 };
-
