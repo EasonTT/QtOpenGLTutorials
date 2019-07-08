@@ -5,7 +5,8 @@
 #include <qopengltexture.h>
 #include <qopenglbuffer.h>
 #include <QMouseEvent>
-#include "SimpleObject3D.h"
+//#include "SimpleObject3D.h"
+#include "ObjectEngine3D.h"
 #include "Group3D.h"
 #include <qopenglcontext.h>
 #include <qbasictimer.h>
@@ -15,6 +16,8 @@
 #include "Skybox.h"
 #include <qstringlist.h>
 #include <qstring.h>
+#include "Material.h"
+#include "ObjectEngine3D.h"
 
 class Widget :
 	public QOpenGLWidget {
@@ -35,7 +38,7 @@ protected:
 
 	void initShaders();
 	void initCube(float width);
-	void loadObj(const QString &path);
+	//void loadObj(const QString &path);
 
 private:
 	QMatrix4x4 pMatrix;
@@ -43,7 +46,7 @@ private:
 	QOpenGLShaderProgram skyboxShader;
 	QVector2D mousePosition;
 
-	QVector<SimpleObject3D*> objects;
+	QVector<ObjectEngine3D*> objects;
 	QVector<Group3D*> groups;
 	QVector<Transformational*> transformObjects;
 

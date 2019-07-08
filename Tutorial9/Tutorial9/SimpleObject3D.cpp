@@ -5,10 +5,10 @@ SimpleObject3D::SimpleObject3D() :
 	s = 1.0f;
 }
 
-SimpleObject3D::SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) :
+SimpleObject3D::SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material* material) :
 	indexBuffer(QOpenGLBuffer::IndexBuffer), texture(0) {
 	s = 1.0f;
-	init(vertices, indices, image);
+	init(vertices, indices, material);
 }
 
 SimpleObject3D::~SimpleObject3D() {
@@ -22,7 +22,7 @@ SimpleObject3D::~SimpleObject3D() {
 	}
 }
 
-void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) {
+void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material *material) {
 
 	if (vertexBuffer.isCreated())
 		vertexBuffer.destroy();
@@ -45,7 +45,9 @@ void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>
 	indexBuffer.allocate(indices.constData(), indices.size() * sizeof(GLuint));
 	indexBuffer.release();
 
-	texture = new QOpenGLTexture(image.mirrored());
+	this->material = material;
+
+	texture = new QOpenGLTexture((material->getDiffuseMap()).mirrored());
 
 	// Set nearest filtering mode for texture minification
 	texture->setMinificationFilter(QOpenGLTexture::Linear);

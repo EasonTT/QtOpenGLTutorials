@@ -16,8 +16,8 @@ Widget::~Widget() {
 	for (int i = 0; i < groups.size(); i++)
 		delete groups[i];
 
-	for (int i = 0; i < transformObjects.size(); i++)
-		delete transformObjects[i];
+	//for (int i = 0; i < transformObjects.size(); i++)
+		//delete transformObjects[i];
 }
 
 void Widget::initializeGL() {
@@ -65,14 +65,16 @@ void Widget::initializeGL() {
 
 	transformObjects.append(groups[2]);
 
-	loadObj("./sphere.obj");
+	//loadObj("./sphere.obj");
+	objects.append(new ObjectEngine3D);
+	objects[objects.size() - 1]->loadObjectFromFile("./sphere.obj");
 	transformObjects.append(objects[objects.size() - 1]);
 
 	groups[0]->addObject(camera);
 
 	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
 
-	 timer.start(10, this);
+	timer.start(10, this);
 }
 
 void Widget::resizeGL(int width, int height) {
@@ -257,46 +259,56 @@ void Widget::initCube(float width) {
 	for (int i = 0; i < 24; i += 4)
 		indices << i + 0 << i + 1 << i + 2 << i + 2 << i + 1 << i + 3;
 
-	objects << new SimpleObject3D(vertices, indices, QImage("./cube.jpg"));
+	Material* material = new Material;
+	material->setDiffuseMap("./cube.jpg");
+	material->setShinnes(96);
+	material->setDiffuseColor(QVector3D(1.0, 1.0, 1.0));
+	material->setAmbienceColor(QVector3D(1.0, 1.0, 1.0));
+	material->setSpecularColor(QVector3D(1.0, 1.0, 1.0));
+
+	ObjectEngine3D* objectEngine = new ObjectEngine3D;
+	objectEngine->addObject(new SimpleObject3D(vertices, indices, material));
+
+	objects << objectEngine;
 }
-
-void Widget::loadObj(const QString& path) {
-	QFile objFile(path);
-	if (!objFile.exists()) {
-		return;
-	}
-
-	QVector<QVector3D> verCoords;
-	QVector<QVector2D> texCoords;
-	QVector<QVector3D> normals;
-	QVector<Vertex> vertices;
-	QVector<GLuint> indices;
-
-	objFile.open(QIODevice::ReadOnly);
-	QTextStream input(&objFile);
-
-	while (!input.atEnd()) {
-		QString line = input.readLine();
-		QStringList list = line.split(" ");
-		if (list[0] == "v") {
-			verCoords << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
-		}
-		else if (list[0] == "vt") {
-			texCoords << QVector2D(list[1].toFloat(), list[2].toFloat());
-		}
-		else if (list[0] == "vn"){
-			normals << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
-		}
-		else if (list[0] == "f") {
-			for (int i = 1; i <= 3; i++) {
-				QStringList v = list[i].split("/");
-				vertices.append(Vertex(verCoords[v[0].toLong() - 1], texCoords[v[1].toLong() - 1], normals[v[2].toLong() - 1]));
-				indices.append(indices.size());
-			}
-		}
-	}
-
-	objFile.close();
-
-	objects.append(new SimpleObject3D(vertices, indices, QImage("./cube.jpg")));
-}
+//
+//void Widget::loadObj(const QString& path) {
+//	QFile objFile(path);
+//	if (!objFile.exists()) {
+//		return;
+//	}
+//
+//	QVector<QVector3D> verCoords;
+//	QVector<QVector2D> texCoords;
+//	QVector<QVector3D> normals;
+//	QVector<Vertex> vertices;
+//	QVector<GLuint> indices;
+//
+//	objFile.open(QIODevice::ReadOnly);
+//	QTextStream input(&objFile);
+//
+//	while (!input.atEnd()) {
+//		QString line = input.readLine();
+//		QStringList list = line.split(" ");
+//		if (list[0] == "v") {
+//			verCoords << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
+//		}
+//		else if (list[0] == "vt") {
+//			texCoords << QVector2D(list[1].toFloat(), list[2].toFloat());
+//		}
+//		else if (list[0] == "vn"){
+//			normals << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
+//		}
+//		else if (list[0] == "f") {
+//			for (int i = 1; i <= 3; i++) {
+//				QStringList v = list[i].split("/");
+//				vertices.append(Vertex(verCoords[v[0].toLong() - 1], texCoords[v[1].toLong() - 1], normals[v[2].toLong() - 1]));
+//				indices.append(indices.size());
+//			}
+//		}
+//	}
+//
+//	objFile.close();
+//
+//	objects.append(new SimpleObject3D(vertices, indices, QImage("./cube.jpg")));
+//}

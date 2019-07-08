@@ -6,6 +6,7 @@
 #include <qopenglfunctions.h>
 #include <qopenglshaderprogram.h>
 #include "Transformational.h"
+#include "Material.h"
 
 struct Vertex {
 	Vertex() {};
@@ -20,9 +21,9 @@ struct Vertex {
 class SimpleObject3D : public Transformational {
 public:
 	SimpleObject3D();
-	SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& texture);
+	SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material* material);
 	~SimpleObject3D();
-	void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image);
+	void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material* material);
 	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 	void rotate(const QQuaternion& r);
 	void translate(const QVector3D& t);
@@ -38,5 +39,7 @@ private:
 	QVector3D t;
 	float s;
 	QMatrix4x4 g;
+
+	Material* material;
 };
 
