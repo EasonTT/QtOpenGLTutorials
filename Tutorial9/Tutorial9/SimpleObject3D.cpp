@@ -66,6 +66,11 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 
 	texture->bind(0);
 	shaderProgram->setUniformValue("u_texture", 0);
+	shaderProgram->setUniformValue("u_materialProperty.diffuseColor", material->getDiffuseColor());
+	shaderProgram->setUniformValue("u_materialProperty.ambienceColor", material->getAmbienceColor());
+	shaderProgram->setUniformValue("u_materialProperty.specularColor", material->getSpecularColor());
+	shaderProgram->setUniformValue("u_materialProperty.shinnes", material->getShinnes());
+	shaderProgram->setUniformValue("u_isUsingDiffuseMap", material->isUsingDiffuseMap());
 
 	QMatrix4x4 modelMatrix;
 	modelMatrix.setToIdentity();

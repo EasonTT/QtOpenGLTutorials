@@ -67,7 +67,7 @@ void Widget::initializeGL() {
 
 	//loadObj("./sphere.obj");
 	objects.append(new ObjectEngine3D);
-	objects[objects.size() - 1]->loadObjectFromFile("./sphere.obj");
+	objects[objects.size() - 1]->loadObjectFromFile("./human.obj");
 	transformObjects.append(objects[objects.size() - 1]);
 
 	groups[0]->addObject(camera);

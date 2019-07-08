@@ -46,19 +46,25 @@ void Material::setShinnes(const qreal& shinnes) {
 	this->shinnes = shinnes;
 }
 
-const qreal Material::getShinnes() const {
+const float Material::getShinnes() const {
 	return shinnes;
 }
 
 void Material::setDiffuseMap(const QString& fileName) {
 	this->diffuseMap = QImage(fileName);
+	this->usingDiffuseMap = true;
 }
 
 void Material::setDiffuseMap(const QImage& image) {
 	diffuseMap = image;
+	this->usingDiffuseMap = true;
 }
 
 const QImage& Material::getDiffuseMap() const {
 	// TODO: insert return statement here
 	return diffuseMap;
+}
+
+const bool Material::isUsingDiffuseMap() const {
+	return usingDiffuseMap;
 }
