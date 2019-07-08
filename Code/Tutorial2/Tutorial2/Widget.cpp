@@ -18,14 +18,15 @@ void Widget::initializeGL() {
 
 	// initialize shaders
 	initShaders();
-	initCube(1.0);
+	//initCube(1.0);
+	initCube(0.5);
 }
 
 void Widget::resizeGL(int width, int height) {
 	float aspect = width / (float)height;
 
 	pMatrix.setToIdentity();
-	pMatrix.perspective(45, aspect, 0.1f, 10.0f);
+	pMatrix.perspective(45, aspect, 0.1f, 100.0f);
 }
 
 void Widget::paintGL() {
@@ -41,7 +42,7 @@ void Widget::paintGL() {
 	QMatrix4x4 vMatrix;
 	vMatrix.setToIdentity();
 
-	texture->bind();
+	texture->bind(0);
 
 	shaderProgram.bind();
 	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
@@ -69,7 +70,7 @@ void Widget::paintGL() {
 
 	int normLoc = shaderProgram.attributeLocation("a_normal");
 	shaderProgram.enableAttributeArray(normLoc);
-	shaderProgram.setAttributeBuffer(normLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
+	shaderProgram.setAttributeBuffer(normLoc, GL_FLOAT, offset, 3, sizeof(Vertex));
 
 	indexBuffer.bind();
 
@@ -116,31 +117,37 @@ void Widget::initShaders() {
 void Widget::initCube(float width) {
 	QVector<Vertex> vertices;
 	vertices <<
+		// front
 		Vertex(QVector3D(-width, width, width), QVector2D(0.0, 1.0), QVector3D(0.0, 0.0, 1.0)) <<
 		Vertex(QVector3D(-width, -width, width), QVector2D(0.0, 0.0), QVector3D(0.0, 0.0, 1.0)) <<
 		Vertex(QVector3D(width, width, width), QVector2D(1.0, 1.0), QVector3D(0.0, 0.0, 1.0)) <<
 		Vertex(QVector3D(width, -width, width), QVector2D(1.0, 0.0), QVector3D(0.0, 0.0, 1.0)) <<
 
+		// right
 		Vertex(QVector3D(width, width, width), QVector2D(0.0, 1.0), QVector3D(1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(width, -width, width), QVector2D(0.0, 0.0), QVector3D(1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(width, width, -width), QVector2D(1.0, 1.0), QVector3D(1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(width, -width, -width), QVector2D(1.0, 0.0), QVector3D(1.0, 0.0, 0.0)) <<
 
+		// top
 		Vertex(QVector3D(width, width, width), QVector2D(0.0, 1.0), QVector3D(0.0, 1.0, 0.0)) <<
 		Vertex(QVector3D(width, width, -width), QVector2D(0.0, 0.0), QVector3D(0.0, 1.0, 0.0)) <<
 		Vertex(QVector3D(-width, width, width), QVector2D(1.0, 1.0), QVector3D(0.0, 1.0, 0.0)) <<
 		Vertex(QVector3D(-width, width, -width), QVector2D(1.0, 0.0), QVector3D(0.0, 1.0, 0.0)) <<
 
+		// back
 		Vertex(QVector3D(width, width, -width), QVector2D(0.0, 1.0), QVector3D(0.0, 0.0, -1.0)) <<
 		Vertex(QVector3D(width, -width, -width), QVector2D(0.0, 0.0), QVector3D(0.0, 0.0, -1.0)) <<
 		Vertex(QVector3D(-width, width, -width), QVector2D(1.0, 1.0), QVector3D(0.0, 0.0, -1.0)) <<
 		Vertex(QVector3D(-width, -width, -width), QVector2D(1.0, 0.0), QVector3D(0.0, 0.0, -1.0)) <<
 
+		// left
 		Vertex(QVector3D(-width, width, width), QVector2D(0.0, 1.0), QVector3D(-1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(-width, width, -width), QVector2D(0.0, 0.0), QVector3D(-1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(-width, -width, width), QVector2D(1.0, 1.0), QVector3D(-1.0, 0.0, 0.0)) <<
 		Vertex(QVector3D(-width, -width, -width), QVector2D(1.0, 0.0), QVector3D(-1.0, 0.0, 0.0)) <<
 
+		// bottom
 		Vertex(QVector3D(-width, -width, width), QVector2D(0.0, 1.0), QVector3D(0.0, -1.0, 0.0)) <<
 		Vertex(QVector3D(-width, -width, -width), QVector2D(0.0, 0.0), QVector3D(0.0, -1.0, 0.0)) <<
 		Vertex(QVector3D(width, -width, width), QVector2D(1.0, 1.0), QVector3D(0.0, -1.0, 0.0)) <<
