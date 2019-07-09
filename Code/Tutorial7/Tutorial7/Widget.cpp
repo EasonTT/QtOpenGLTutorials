@@ -92,7 +92,7 @@ void Widget::paintGL() {
 	objectShader.bind();
 	objectShader.setUniformValue("u_projectionMatrix", pMatrix);
 	objectShader.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
-	objectShader.setUniformValue("u_lightPower", 5.0f);
+	objectShader.setUniformValue("u_lightPower", 3.0f);
 
 	camera->draw(&objectShader);
 	for (int i = 0; i < transformObjects.size(); i++) {
