@@ -50,7 +50,7 @@ void Widget::initializeGL() {
 
 	transformObjects.append(groups[2]);
 
-	timer.start(30, this);
+	timer.start(10, this);
 }
 
 void Widget::resizeGL(int width, int height) {
