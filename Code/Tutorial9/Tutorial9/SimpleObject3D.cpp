@@ -99,7 +99,7 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 
 	int normLoc = shaderProgram->attributeLocation("a_normal");
 	shaderProgram->enableAttributeArray(normLoc);
-	shaderProgram->setAttributeBuffer(normLoc, GL_FLOAT, offset, 2, sizeof(Vertex));
+	shaderProgram->setAttributeBuffer(normLoc, GL_FLOAT, offset, 3, sizeof(Vertex));
 
 	indexBuffer.bind();
 
