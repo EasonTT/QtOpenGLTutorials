@@ -72,7 +72,7 @@ void Widget::paintGL() {
 	shaderProgram.setUniformValue("u_projectionMatrix", pMatrix);
 	shaderProgram.setUniformValue("u_viewMatrix", vMatrix);
 	shaderProgram.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
-	shaderProgram.setUniformValue("u_lightPower", 5.0f);
+	shaderProgram.setUniformValue("u_lightPower", 3.0f);
 
 	for (int i = 0; i < transformObjects.size(); i++) {
 		transformObjects[i]->draw(&shaderProgram, context()->functions());
