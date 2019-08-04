@@ -100,7 +100,7 @@ void Widget::paintGL() {
 
 /*
 Description:
-	This function is used to initialize shaders for skybox and objects;
+	This function is used to initialize shaders and objects;
 Input:
 	@ void parameter: void;
 Output:

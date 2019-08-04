@@ -1,27 +1,53 @@
 #include "Widget.h"
 
+/*
+Description:
+	This function is a constructor;
+Input:
+	@ QWidget* parent:
+*/
 Widget::Widget(QWidget* parent) :
 	QOpenGLWidget(parent), texture(0), indexBuffer(QOpenGLBuffer::IndexBuffer) {
 }
 
+/*
+Description:
+	This function is a destructor;
+Input:
+	@ void patameter: void;
+*/
 Widget::~Widget() {
 }
 
+/*
+Description:
+	This function is used to initialize OpenGL state machine, and initialize shaders ,objects and etc.;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initializeGL() {
 	// clear the screen with black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-	// clear the scrren with red
-	//glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 
 	// initialize shaders
 	initShaders();
-	//initCube(1.0);
 	initCube(0.5);
 }
 
+/*
+Description:
+	This function is used to deal with resive event;
+Input:
+	@ int width: window width after resize event;
+	@ int height: window height after resize event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::resizeGL(int width, int height) {
 	float aspect = width / (float)height;
 
@@ -29,6 +55,14 @@ void Widget::resizeGL(int width, int height) {
 	pMatrix.perspective(45, aspect, 0.1f, 100.0f);
 }
 
+/*
+Description:
+	This function is used to set parameters for the vertex shader, fragment shader and etc. and draw other objects;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -78,12 +112,28 @@ void Widget::paintGL() {
 
 }
 
+/*
+Description:
+	This function is used to process mouse events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a mouse event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::mousePressEvent(QMouseEvent* event) {
 	if (event->buttons() == Qt::LeftButton)
 		mousePosition = QVector2D(event->localPos());
 	event->accept();
 }
 
+/*
+Description:
+	This function is used to process mouse move events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a mouse move event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::mouseMoveEvent(QMouseEvent* event) {
 	if (event->buttons() != Qt::LeftButton) return;
 
@@ -99,6 +149,14 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 	update();
 }
 
+/*
+Description:
+	This function is used to initialize shaders objects;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initShaders() {
 	if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "./VertexShader.vsh")) {
 		QString log = shaderProgram.log();
@@ -114,6 +172,14 @@ void Widget::initShaders() {
 	}
 }
 
+/*
+Description:
+	This function is used to load graphics data for a cube, including vertex data and index data;
+Input:
+	@ int width: the width of the cube;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initCube(float width) {
 	QVector<Vertex> vertices;
 	vertices <<
