@@ -8,9 +8,9 @@ Tutorial 1 - Project Template
 This tutorial solution is used to build up an template for using OpenGL with Qt
 
 # Solution Environment:
-Windows 10
-Visual Studio 2019
-Qt 5.12.3
+* Windows 10
+* Visual Studio 2019
+* Qt 5.12.3
 
 # Solution Hierarchy:
 > Form Files
