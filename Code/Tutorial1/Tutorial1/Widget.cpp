@@ -10,8 +10,6 @@ Widget::~Widget() {
 void Widget::initializeGL() {
 	// clear the screen with black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-	// clear the scrren with red
-	//glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);

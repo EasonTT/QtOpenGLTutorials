@@ -22,6 +22,61 @@ Widget::~Widget() {
 
 void Widget::initializeGL() {
 
+	//setFocusPolicy(Qt::StrongFocus);
+
+	//// clear the screen with black
+	//glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+	//glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_CULL_FACE);
+
+	//// initialize shaders
+	//initShaders();
+
+	//skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
+
+	//float step = 1.0f;
+
+	//groups.append(new Group3D);
+	//for (float x = -step; x <= step; x += 2 * step) {
+	//	for (float y = -step; y <= step; y += 2 * step) {
+	//		for (float z = -step; z <= step; z += 2 * step) {
+	//			initCube(0.5f);
+	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+	//		}
+	//	}
+	//}
+	//groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
+
+	//groups.append(new Group3D);
+	//for (float x = -step; x <= step; x += 2 * step) {
+	//	for (float y = -step; y <= step; y += 2 * step) {
+	//		for (float z = -step; z <= step; z += 2 * step) {
+	//			initCube(0.5f);
+	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+	//		}
+	//	}
+	//}
+	//groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
+
+	//groups.append(new Group3D);
+	//groups[2]->addObject(groups[0]);
+	//groups[2]->addObject(groups[1]);
+
+	//transformObjects.append(groups[2]);
+
+	//objects.append(new ObjectEngine3D);
+	//objects[objects.size() - 1]->loadObjectFromFile("./human.obj");
+	//transformObjects.append(objects[objects.size() - 1]);
+
+	//groups[0]->addObject(camera);
+
+	//timer.start(10, this);
+
+	//-----------------------------------------------------
+
 	setFocusPolicy(Qt::StrongFocus);
 
 	// clear the screen with black
@@ -33,48 +88,49 @@ void Widget::initializeGL() {
 	// initialize shaders
 	initShaders();
 
-	float step = 1.0f;
+	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
+
+	//float step = 1.0f;
+
+	//groups.append(new Group3D);
+	//for (float x = -step; x <= step; x += 2 * step) {
+	//	for (float y = -step; y <= step; y += 2 * step) {
+	//		for (float z = -step; z <= step; z += 2 * step) {
+	//			initCube(0.5f);
+	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+	//		}
+	//	}
+	//}
+	//groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
+
+	//groups.append(new Group3D);
+	//for (float x = -step; x <= step; x += 2 * step) {
+	//	for (float y = -step; y <= step; y += 2 * step) {
+	//		for (float z = -step; z <= step; z += 2 * step) {
+	//			initCube(0.5f);
+	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+	//		}
+	//	}
+	//}
+	//groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
+
+	//groups.append(new Group3D);
+	//groups[2]->addObject(groups[0]);
+	//groups[2]->addObject(groups[1]);
+
+	//transformObjects.append(groups[2]);
 
 	groups.append(new Group3D);
-	for (float x = -step; x <= step; x += 2 * step) {
-		for (float y = -step; y <= step; y += 2 * step) {
-			for (float z = -step; z <= step; z += 2 * step) {
-				initCube(0.5f);
-				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-			}
-		}
-	}
-	groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
-
-	groups.append(new Group3D);
-	for (float x = -step; x <= step; x += 2 * step) {
-		for (float y = -step; y <= step; y += 2 * step) {
-			for (float z = -step; z <= step; z += 2 * step) {
-				initCube(0.5f);
-				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-			}
-		}
-	}
-	groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
-
-	groups.append(new Group3D);
-	groups[2]->addObject(groups[0]);
-	groups[2]->addObject(groups[1]);
-
-	transformObjects.append(groups[2]);
-
-	//loadObj("./sphere.obj");
 	objects.append(new ObjectEngine3D);
-	objects[objects.size() - 1]->loadObjectFromFile("./human.obj");
-	transformObjects.append(objects[objects.size() - 1]);
+	objects[objects.size() - 1]->loadObjectFromFile("./cube.obj");
+	groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+	transformObjects.append(groups[groups.size() - 1]);
 
 	groups[0]->addObject(camera);
 
-	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
-
-	timer.start(10, this);
+	//timer.start(10, this);
 }
 
 void Widget::resizeGL(int width, int height) {
@@ -87,6 +143,13 @@ void Widget::resizeGL(int width, int height) {
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	skyboxShader.bind();
+	skyboxShader.setUniformValue("u_projectionMatrix", pMatrix);
+
+	camera->draw(&skyboxShader);
+	skybox->draw(&skyboxShader, context()->functions());
+	skyboxShader.release();
+
 	objectShader.bind();
 	objectShader.setUniformValue("u_projectionMatrix", pMatrix);
 	objectShader.setUniformValue("u_lightPosition", QVector4D(0.0, 0.0, 0.0, 1.0));
@@ -97,13 +160,6 @@ void Widget::paintGL() {
 		transformObjects[i]->draw(&objectShader, context()->functions());
 	}
 	objectShader.release();
-
-	skyboxShader.bind();
-	skyboxShader.setUniformValue("u_projectionMatrix", pMatrix);
-
-	camera->draw(&skyboxShader);
-	skybox->draw(&skyboxShader, context()->functions());
-	skyboxShader.release();
 }
 
 void Widget::mousePressEvent(QMouseEvent* event) {

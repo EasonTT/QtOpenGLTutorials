@@ -63,5 +63,6 @@
   <ItemGroup>
     <None Include="FragmentShader.fsh" />
     <None Include="VertexShader.vsh" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

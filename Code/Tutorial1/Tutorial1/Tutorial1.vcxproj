@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fsh" />
+    <None Include="README.md" />
     <None Include="VertexShader.vsh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -50,7 +50,8 @@ void ObjectEngine3D::loadObjectFromFile(const QString& fileName) {
 			}
 		}
 		else if (list[0] == "usemtl") {
-			if (object) object->init(vertices, indices, materials.getMaterial(list[1]));
+			//if (object) object->init(vertices, indices, materials.getMaterial(list[1]));
+			if (object) object->init(vertices, indices, materials.getMaterial(materialName));
 			materialName = list[1];
 			addObject(object);
 			object = new SimpleObject3D;
