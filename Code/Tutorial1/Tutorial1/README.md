@@ -12,9 +12,11 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 # Solution Hierarchy:
 > Form Files
 >> Tutorial1.ui
+>
 > Header Files
 >> Tutoiral1.h
 >> Widget.h
+>
 > Source Files
 >> main.cpp
 >> Tutorial1.cpp
