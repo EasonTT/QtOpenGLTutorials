@@ -29,14 +29,14 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 >>
 >
 > Source Files
->> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/main.cpp)
+>> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/main.cpp)
 >>
->> [Tutorial1.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/Tutorial1.cpp): implement Tutorial1.h;
+>> [Tutorial1.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.cpp): implement Tutorial1.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Widget.cpp): implement Widget.h;
 >
 > Shader Files
->> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/FragmentShader.fsh)
+>> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/FragmentShader.fsh)
 >>
->> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/VertexShader.vsh)
+>> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/VertexShader.vsh)
 >
