@@ -14,12 +14,12 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 
 # Solution Hierarchy:
 > Form Files
->> Tutorial1.ui: Qt UI file;
+>> [Tutorial1.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.ui): Qt UI file;
 >
 > Header Files
->> Tutoiral1.h: Qt framework;
+>> [Tutoiral1.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.h): Qt framework;
 >>
->> Widget.h: Derived from QOpenGLWidget, used to implement OpenGL pipeline;
+>> [Widget.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Widget.h): Derived from QOpenGLWidget, used to implement OpenGL pipeline;
 >>
 >>> void initializeGL(): This function is used to initialize OpenGL state machine;
 >>> 
@@ -29,14 +29,14 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 >>
 >
 > Source Files
->> main.cpp
+>> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/main.cpp)
 >>
->> Tutorial1.cpp: implement Tutorial1.h;
+>> [Tutorial1.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/Tutorial1.cpp): implement Tutorial1.h;
 >>
->> Widget.cpp: implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/Widget.cpp): implement Widget.h;
 >
 > Shader Files
->> FragmentShader.fsh
+>> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/FragmentShader.fsh)
 >>
->> VertexShader.vsh
+>> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/VertexShader.vsh)
 >
