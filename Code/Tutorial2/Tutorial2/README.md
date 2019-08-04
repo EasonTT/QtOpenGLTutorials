@@ -5,7 +5,7 @@ Tutorial 2 - Shader Lighting
 ![Tutorial 2](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/result.jpg)
 
 # Solution Introduction
-This tutorial solution adds 
+This tutorial solution adds mouse events for rotation and updates fragment shader with phong shading implementation;
 
 # Solution Environment:
 * Windows 10
