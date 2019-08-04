@@ -15,6 +15,7 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 >
 > Header Files
 >> Tutoiral1.h
+>>
 >> Widget.h
 >
 > Source Files
