@@ -11,17 +11,29 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 
 # Solution Hierarchy:
 > Form Files
->> Tutorial1.ui
+>> Tutorial1.ui: Qt UI file;
 >
 > Header Files
->> Tutoiral1.h
+>> Tutoiral1.h: Qt framework;
 >>
->> Widget.h
+>> Widget.h: Derived from QOpenGLWidget, used to implement OpenGL pipeline;
+>>
+>>> void initializeGL(): This function is used to initialize OpenGL state machine;
+>>> 
+>>> void resizeGL(int width, int height): This function is used to deal with resive event;
+>>>
+>>> void paintGL(): This function is used to set parameters for the vertex shader, fragment shader and etc. and draw  objects;
+>>
 >
 > Source Files
 >> main.cpp
->> Tutorial1.cpp
->> Widget.cpp
+>>
+>> Tutorial1.cpp: implement Tutorial1.h
+>>
+>> Widget.cpp: implement Widget.h
+>
 > Shader Files
 >> FragmentShader.fsh
+>>
 >> VertexShader.vsh
+>
