@@ -8,6 +8,9 @@ Tutorial 1 - Project Template
 This tutorial solution is used to build up an template for using OpenGL with Qt
 
 # Solution Environment:
+Windows 10
+Visual Studio 2019
+Qt 5.12.3
 
 # Solution Hierarchy:
 > Form Files
@@ -22,15 +25,15 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 >>> 
 >>> void resizeGL(int width, int height): This function is used to deal with resive event;
 >>>
->>> void paintGL(): This function is used to set parameters for the vertex shader, fragment shader and etc. and draw  objects;
+>>> void paintGL(): This function is used to set parameters for the vertex shader, fragment shader and etc. and draw objects;
 >>
 >
 > Source Files
 >> main.cpp
 >>
->> Tutorial1.cpp: implement Tutorial1.h
+>> Tutorial1.cpp: implement Tutorial1.h;
 >>
->> Widget.cpp: implement Widget.h
+>> Widget.cpp: implement Widget.h;
 >
 > Shader Files
 >> FragmentShader.fsh
