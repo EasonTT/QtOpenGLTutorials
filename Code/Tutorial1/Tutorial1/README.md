@@ -5,7 +5,7 @@ Tutorial 1 - Project Template
 ![](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/result.jpg)
 
 # Solution Introduction
-This tutorial solution is used to build up an template for using OpenGL with Qt
+This tutorial solution is used to build up an template for using OpenGL with Qt, and display a simple cube with texture;
 
 # Solution Environment:
 * Windows 10
@@ -14,7 +14,7 @@ This tutorial solution is used to build up an template for using OpenGL with Qt
 
 # Solution Hierarchy:
 > Form Files
->> [Tutorial1.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.ui): Qt UI file;
+>> [Tutorial1.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
 > Header Files
 >> [Tutoiral1.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.h): Qt framework;
