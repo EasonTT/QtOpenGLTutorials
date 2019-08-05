@@ -14,9 +14,11 @@ This tutorial solution introduces an timer with a timer event;
 
 # Solution Hierarchy:
 > Form Files
+>
 >> [Tutorial5.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
 > Header Files
+>
 >> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.h): Derived from Transformational.h, used to define a group of objects;
 >>
 >>> void rotate(const QQuaternion& r): This function is used to rotate all the objects in a group, which calls Object3D::rotate(const QQuaternion&) for object rotation;
@@ -81,9 +83,10 @@ This tutorial solution introduces an timer with a timer event;
 >>
 >
 > Source Files
->> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/main.cpp)
->>
+>
 >> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.cpp): implement Group3D.h;
+>>
+>> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/main.cpp)
 >>
 >> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/SimpleObject3D.cpp): implement SimpleObject3D.h;
 >>
@@ -92,6 +95,7 @@ This tutorial solution introduces an timer with a timer event;
 >> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Widget.cpp): implement Widget.h;
 >
 > Shader Files
+>
 >> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/VertexShader.vsh): The vertex shader projects vertices;

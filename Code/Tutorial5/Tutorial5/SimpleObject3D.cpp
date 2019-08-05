@@ -88,9 +88,10 @@ void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>
 
 /*
 Description:
-	This function is used to rotate the object;
+	This function is used to draw all the objects in a group, which calls Object3D::draw(QOpenGLShaderProgram*, QOpenGLFunctions*);
 Input:
-	@ const QQuaternion& r: a quaternion (scalar, x position, y position, and z position) for rotation;
+	@ QOpenGLShaderProgram* shaderProgram: the shader program used for loading shaders and passing parameters;
+	@ QOpenGLFunctions* functions: the OpenGL functions used to drawing elements;
 Output:
 	@ void returnValue: void;
 */
@@ -141,9 +142,9 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 
 /*
 Description:
-	This function is used to translate the object;
+	This function is used to rotate the object;
 Input:
-	@ const QVector3D& t: a translation vector;
+	@ const QQuaternion& r: a quaternion (scalar, x position, y position, and z position) for rotation;
 Output:
 	@ void returnValue: void;
 */
@@ -153,9 +154,9 @@ void SimpleObject3D::rotate(const QQuaternion& r) {
 
 /*
 Description:
-	This function is used to scale the object;
+	This function is used to translate the object;
 Input:
-	@ const float& s: a scalar;
+	@ const QVector3D& t: a translation vector;
 Output:
 	@ void returnValue: void;
 */
