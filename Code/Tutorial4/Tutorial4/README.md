@@ -5,7 +5,7 @@ Tutorial 4 - Object Groupings (2/2)
 ![Tutorial 4](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/result.jpg)
 
 # Solution Introduction
-This tutorial solution introduces how to add other objects and translate it to a given position;
+This tutorial solution introduces an abstract class, Transformational, as the bluprint of graphic transformation. Moreover, a Group3D is created to organize SimpleObject3D;
 
 # Solution Environment:
 * Windows 10
