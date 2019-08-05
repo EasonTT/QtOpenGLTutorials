@@ -1,4 +1,4 @@
-Tutorial 3 - Object Groupings (1/2)
+Tutorial 3 - Object Groupings (1/3)
 =============================
 
 # Tutorial 3 Result
