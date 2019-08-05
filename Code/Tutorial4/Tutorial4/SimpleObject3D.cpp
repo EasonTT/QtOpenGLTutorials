@@ -1,16 +1,36 @@
 #include "SimpleObject3D.h"
 
+/*
+Description:
+	This function is a constructor;
+Input:
+	@ void parameter: void;
+*/
 SimpleObject3D::SimpleObject3D() :
 	indexBuffer(QOpenGLBuffer::IndexBuffer), texture(0) {
 	s = 1.0f;
 }
 
+/*
+Description:
+	This function is a constructor with vertices reference, indices reference, and texture image reference;
+Input:
+	@ const QVector<Vertex>& vertices: the vertex list of a given object;
+	@ const QVector<GLuint>& indices: the index list of a given object;
+	@ const QImage & image: a given texture image;
+*/
 SimpleObject3D::SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) :
 	indexBuffer(QOpenGLBuffer::IndexBuffer), texture(0) {
 	s = 1.0f;
 	init(vertices, indices, image);
 }
 
+/*
+Description:
+	This function is a destructor;
+Input:
+	@ void patameter: void;
+*/
 SimpleObject3D::~SimpleObject3D() {
 	if (vertexBuffer.isCreated())
 		vertexBuffer.destroy();
@@ -22,6 +42,14 @@ SimpleObject3D::~SimpleObject3D() {
 	}
 }
 
+/*
+Description:
+	This function is used to initialize an object with its vertices reference, indices reference, and texture image reference;
+Input:
+	@ const QVector<Vertex>& vertices: the vertex list of a given object;
+	@ const QVector<GLuint>& indices: the index list of a given object;
+	@ const QImage & image: a given texture image;
+*/
 void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) {
 
 	if (vertexBuffer.isCreated())
@@ -58,6 +86,63 @@ void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>
 	texture->setWrapMode(QOpenGLTexture::Repeat);
 }
 
+/*
+Description:
+	This function is used to rotate the object;
+Input:
+	@ const QQuaternion& r: a quaternion (scalar, x position, y position, and z position) for rotation;
+Output:
+	@ void returnValue: void;
+*/
+void SimpleObject3D::rotate(const QQuaternion& r) {
+	this->r = r * this->r;
+}
+
+/*
+Description:
+	This function is used to translate the object;
+Input:
+	@ const QVector3D& t: a translation vector;
+Output:
+	@ void returnValue: void;
+*/
+void SimpleObject3D::translate(const QVector3D& t) {
+	this->t += t;
+}
+
+/*
+Description:
+	This function is used to scale the object;
+Input:
+	@ const float& s: a scalar;
+Output:
+	@ void returnValue: void;
+*/
+void SimpleObject3D::scale(const float& s) {
+	this->s *= s;
+}
+
+/*
+Description:
+	This function is used to set the global transform for the object;
+Input:
+	@ const QMatrix4x4& g: a global transformation;
+Output:
+	@ void returnValue: void;
+*/
+void SimpleObject3D::setGlobalTransform(const QMatrix4x4& g) {
+	this->g = g;
+}
+
+/*
+Description:
+	This function is used to set parameters for the vertex shader, fragment shader and etc. and draw the object;
+Input:
+	@ QOpenGLShaderProgram* shaderProgram: the shader program used for loading shaders and passing parameters;
+	@ QOpenGLFunctions* functions: the OpenGL functions used to drawing elements;
+Output:
+	@ void returnValue: void;
+*/
 void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions) {
 
 	if (!vertexBuffer.isCreated() || !indexBuffer.isCreated()) return;
@@ -101,20 +186,4 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 	vertexBuffer.release();
 	indexBuffer.release();
 	texture->release();
-}
-
-void SimpleObject3D::rotate(const QQuaternion& r) {
-	this->r = r * this->r;
-}
-
-void SimpleObject3D::translate(const QVector3D& t) {
-	this->t += t;
-}
-
-void SimpleObject3D::scale(const float& s) {
-	this->s *= s;
-}
-
-void SimpleObject3D::setGlobalTransform(const QMatrix4x4& g) {
-	this->g = g;
 }

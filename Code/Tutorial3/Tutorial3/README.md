@@ -1,4 +1,4 @@
-Tutorial 3 - Object Groupings
+Tutorial 3 - Object Groupings (1/2)
 =============================
 
 # Tutorial 3 Result
@@ -17,7 +17,7 @@ This tutorial solution introduces how to add other objects and translate it to a
 >> [Tutorial3.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Tutorial3.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
 > Header Files
->> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/SimpleObject3D.h): 
+>> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/SimpleObject3D.h): Used to define a 3D object;
 >>
 >>> void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image): This function is used to initialize an object with its vertices reference, indices reference, and texture image reference;
 >>>
