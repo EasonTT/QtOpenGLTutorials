@@ -1,6 +1,6 @@
-Tutorial 4 - Object Groupings (2/2)
+Tutorial 4 - Object Groupings (2/3)
 =============================
-![Tutorial 4](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/README.md)
+
 # Tutorial 4 Result
 ![Tutorial 4](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/result.jpg)
 
