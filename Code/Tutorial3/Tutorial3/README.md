@@ -5,7 +5,7 @@ Tutorial 3 - Object Groupings
 ![Tutorial 3](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/result.jpg)
 
 # Solution Introduction
-This tutorial solution introduces 
+This tutorial solution introduces how to add other objects and translate it to a given position;
 
 # Solution Environment:
 * Windows 10
