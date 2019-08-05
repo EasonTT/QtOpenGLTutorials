@@ -17,7 +17,7 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >> [Tutorial6.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Tutorial6.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
 > Header Files
->> [Camera3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Camera3D.h): Derived from Transformational.h, used to define the camera (view matrix);
+>> [Camera3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Camera3D.h): Derived from Transformational class, used to define the camera (view matrix);
 >>
 >>> void rotate(const QQuaternion& r): This function is used to rotate the camera;
 >>> 
@@ -29,7 +29,7 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >>> 
 >>>void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions): This function is used to set parameters for the vertex shader, fragment shader and etc.;
 >>
->> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Group3D.h): Derived from Transformational.h, used to define a group of objects (model matrix);
+>> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Group3D.h): Derived from Transformational class, used to define a group of objects (model matrix);
 >>
 >>> void rotate(const QQuaternion& r): This function is used to rotate all the objects in a group, which calls Object3D::rotate(const QQuaternion&) for object rotation;
 >>>
@@ -47,7 +47,7 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >>>
 >>> void delObject(const int& index): This function is used to delete an object by its index;
 >>
->> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/SimpleObject3D.h): Used to define a 3D object;
+>> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/SimpleObject3D.h): Derived from Transformational class, used to define a 3D object;
 >>
 >>> void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image): This function is used to initialize an object with its vertices reference, indices reference, and texture image reference;
 >>>
