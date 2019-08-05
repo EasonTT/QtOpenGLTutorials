@@ -130,7 +130,7 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 >>
 >> [Object.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Object.vsh): The vertex shader projects object vertices;
 >>
->> [Skybox.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.vsh): The fragment shader implements only texture color for skybox;
+>> [Skybox.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.fsh): The fragment shader implements only texture color for skybox;
 >> 
 >> [Skybox.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.vsh): The vertex shader projects skybox vertices;
 >
