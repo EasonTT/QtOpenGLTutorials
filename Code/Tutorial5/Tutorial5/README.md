@@ -1,11 +1,11 @@
 Tutorial 5 - Object Groupings (3/3)
 =============================
 
-# Tutorial 4 Result
-![Tutorial 4](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/result.jpg)
+# Tutorial 5 Result
+![Tutorial 5](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/result.gif)
 
 # Solution Introduction
-This tutorial solution introduces an abstract class, Transformational, as the blueprint of graphic transformation. Moreover, a Group3D is created to organize SimpleObject3D;
+This tutorial solution introduces an timer with a timer event;
 
 # Solution Environment:
 * Windows 10
@@ -14,10 +14,10 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 
 # Solution Hierarchy:
 > Form Files
->> [Tutorial4.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Tutorial4.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
+>> [Tutorial5.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
 > Header Files
->> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Group3D.h): Derived from Transformational.h, used to define a group of objects;
+>> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.h): Derived from Transformational.h, used to define a group of objects;
 >>
 >>> void rotate(const QQuaternion& r): This function is used to rotate all the objects in a group, which calls Object3D::rotate(const QQuaternion&) for object rotation;
 >>>
@@ -31,7 +31,7 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>>
 >>> void addObject(Transformational* object): This function is used to add object into the group list. An initialization of its position is necessary;
 >>
->> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/SimpleObject3D.h): Used to define a 3D object;
+>> [SimpleObject3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/SimpleObject3D.h): Used to define a 3D object;
 >>
 >>> void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image): This function is used to initialize an object with its vertices reference, indices reference, and texture image reference;
 >>>
@@ -45,7 +45,7 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>>
 >>> void draw(QOpenGLShaderProgram *shaderProgram, QOpenGLFunctions *functions): This function is used to set parameters for the vertex shader, fragment shader and etc. and draw the object;
 >>
->> [Transformational.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Transformational.h): An abstract class used as a blueprint;
+>> [Transformational.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Transformational.h): An abstract class used as a blueprint;
 >>
 >>> virtual void rotate(const QQuaternion& r) = 0;
 >>>
@@ -57,9 +57,9 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>>
 >>> virtual void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions) = 0;
 >>
->> [Tutorial4.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Tutorial4.h): Qt framework;
+>> [Tutorial5.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.h): Qt framework;
 >>
->> [Widget.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Widget.h): Derived from QOpenGLWidget, used to implement OpenGL pipeline;
+>> [Widget.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Widget.h): Derived from QOpenGLWidget, used to implement OpenGL pipeline;
 >>
 >>> void initializeGL(): This function is used to initialize OpenGL state machine, and initialize shaders, objects and etc.;
 >>> 
@@ -71,7 +71,9 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>>
 >>> void mouseMoveEvent(QMouseEvent* event): This function is used to process mouse move events, which is a Qt event function;
 >>>
->>> void Widget::wheelEvent(QWheelEvent* event): This function is used to process wheel events, which is a Qt event function;
+>>> void wheelEvent(QWheelEvent* event): This function is used to process wheel events, which is a Qt event function;
+>>>
+>>> void timerEvent(QTimerEvent* event): This function is used to process timer events, which is a Qt event function;
 >>>
 >>> void initShaders(): This function is used to initialize shaders objects;
 >>> 
@@ -79,18 +81,18 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>
 >
 > Source Files
->> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/main.cpp)
+>> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/main.cpp)
 >>
->> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Group3D.cpp): implement Group3D.h;
+>> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.cpp): implement Group3D.h;
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/SimpleObject3D.cpp): implement SimpleObject3D.h;
 >>
->> [Tutorial4.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Tutorial4.cpp): implement Tutorial4.h;
+>> [Tutorial5.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.cpp): implement Tutorial5.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Widget.cpp): implement Widget.h;
 >
 > Shader Files
->> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;
+>> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;
 >>
->> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/VertexShader.vsh): The vertex shader projects vertices;
+>> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/VertexShader.vsh): The vertex shader projects vertices;
 >
