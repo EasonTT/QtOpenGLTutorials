@@ -21,7 +21,7 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
 >>
 >> [Widget.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Widget.h): Derived from QOpenGLWidget, used to implement OpenGL pipeline;
 >>
->>> void initializeGL(): This function is used to initialize OpenGL state machine, and initialize shaders ,objects and etc.;
+>>> void initializeGL(): This function is used to initialize OpenGL state machine, and initialize shaders, objects and etc.;
 >>> 
 >>> void resizeGL(int width, int height): This function is used to deal with resive event;
 >>>

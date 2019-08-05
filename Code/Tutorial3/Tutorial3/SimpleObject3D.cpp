@@ -1,14 +1,34 @@
 #include "SimpleObject3D.h"
 
+/*
+Description:
+	This function is a constructor;
+Input:
+	@ void parameter: void;
+*/
 SimpleObject3D::SimpleObject3D() :
 	indexBuffer(QOpenGLBuffer::IndexBuffer), texture(0) {
 }
 
+/*
+Description:
+	This function is a constructor with vertices reference, indices reference, and texture image reference;
+Input:
+	@ const QVector<Vertex>& vertices: the vertex list of a given object;
+	@ const QVector<GLuint>& indices: the index list of a given object;
+	@ const QImage & image: a given texture image;
+*/
 SimpleObject3D::SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) :
 	indexBuffer(QOpenGLBuffer::IndexBuffer), texture(0) {
 	init(vertices, indices, image);
 }
 
+/*
+Description:
+	This function is a destructor;
+Input:
+	@ void patameter: void;
+*/
 SimpleObject3D::~SimpleObject3D() {
 	if(vertexBuffer.isCreated())
 		vertexBuffer.destroy();
@@ -20,6 +40,14 @@ SimpleObject3D::~SimpleObject3D() {
 	}
 }
 
+/*
+Description:
+	This function is used to initialize an object with its vertices reference, indices reference, and texture image reference;
+Input:
+	@ const QVector<Vertex>& vertices: the vertex list of a given object;
+	@ const QVector<GLuint>& indices: the index list of a given object;
+	@ const QImage & image: a given texture image;
+*/
 void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, const QImage& image) {
 
 	if (vertexBuffer.isCreated())
@@ -58,6 +86,15 @@ void SimpleObject3D::init(const QVector<Vertex>& vertices, const QVector<GLuint>
 	modelMatrix.setToIdentity();
 }
 
+/*
+Description:
+	This function is used to set parameters for the vertex shader, fragment shader and etc. and draw the object;
+Input:
+	@ QOpenGLShaderProgram* shaderProgram: the shader program used for loading shaders and passing parameters;
+	@ QOpenGLFunctions* functions: the OpenGL functions used to drawing elements;
+Output:
+	@ void returnValue: void;
+*/
 void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions) {
 
 	if (!vertexBuffer.isCreated() || !indexBuffer.isCreated()) return;
@@ -95,6 +132,14 @@ void SimpleObject3D::draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions*
 	texture->release();
 }
 
+/*
+Description:
+	This function is used to translate the object;
+Input:
+	@ const QVector3D& t: a translation vector;
+Output:
+	@ void returnValue: void;
+*/
 void SimpleObject3D::translate(const QVector3D& translateVector) {
 	modelMatrix.translate(translateVector);
 }

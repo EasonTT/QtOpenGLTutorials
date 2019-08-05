@@ -71,5 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FragmentShader.fsh" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
