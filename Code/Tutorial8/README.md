@@ -5,7 +5,7 @@ Tutorial 8 - Load An Obj File
 ![Tutorial 8](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/result.gif)
 
 # Solution Introduction
-This tutorial solution introduces a skybox and render skybox with other objects simultaneously;
+This tutorial solution develop functions to load .obj files;
 
 # Solution Environment:
 * Windows 10
