@@ -84,6 +84,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 
 ## Project Structure:
+```
 QtOpenGLTutorials:.  
 │   .gitattributes
 │   .gitignore
@@ -384,3 +385,4 @@ QtOpenGLTutorials:.
         skybox4.jpg
         sphere.mtl
         sphere.obj
+```
