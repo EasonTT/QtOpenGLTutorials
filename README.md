@@ -2,7 +2,7 @@ QtOpenGLTutorials
 =================
 
 ## Project Introduction:
-This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tutorial] (https://www.youtube.com/watch?v=HgoKrrf4iks&list=PL-hrQhpTB95LKMbttX47vCsNeGbJQVz1-)(A Russion tutorial without English subtitles). The tutorial starts with a Qt template on a simple OpenGL application, and then dig into it. Finally, the graphics components includes camera, object engines, object groups, etc.
+This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tutorial](https://www.youtube.com/watch?v=HgoKrrf4iks&list=PL-hrQhpTB95LKMbttX47vCsNeGbJQVz1-) (A Russion tutorial without English subtitles). The tutorial starts with a Qt template on a simple OpenGL application, and then dig into it. Finally, the graphics components includes camera, object engines, object groups, etc.
 
 ## Project Environment:
 * Windows 10
