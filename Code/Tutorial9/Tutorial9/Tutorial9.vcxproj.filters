@@ -28,6 +28,9 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{db0d6c23-f2fe-4770-8030-de797dda4d13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -104,12 +107,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Object.fsh">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="Skybox.fsh">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Object.vsh">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Skybox.vsh">
+      <Filter>Resource Files\Shaders</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

@@ -30,12 +30,10 @@ void main(void) {
 
 	if (u_isUsingDiffuseMap == false) diffMatColor = vec4(u_materialProperty.diffuseColor, 1.0);
 
-	// vec4 diffColor = diffMatColor * u_lightPower * max(0.0, dot(v_normal, -lightVec)) / (1.0 + 0.25 * pow(len, 2.0));
 	vec4 diffColor = diffMatColor * u_lightPower * max(0.0, dot(v_normal, -lightVec));
 	resultColor += diffColor;
 	vec4 ambientColor = ambientFactor * diffMatColor;
 	resultColor += ambientColor * vec4(u_materialProperty.ambienceColor, 1.0);
-	// vec4 specularColor = vec4(1.0, 1.0, 1.0, 1.0) * u_lightPower * pow(max(0.0, dot(reflectLight, -eyeVec)), specularFactor) / (1.0 + 0.25 * pow(len, 2.0));
 	vec4 specularColor = vec4(1.0, 1.0, 1.0, 1.0) * u_lightPower * pow(max(0.0, dot(reflectLight, -eyeVec)), specularFactor);
 	resultColor += specularColor * vec4(u_materialProperty.specularColor, 1.0);
 

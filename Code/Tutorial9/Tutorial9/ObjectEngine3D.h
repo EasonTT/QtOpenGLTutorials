@@ -11,11 +11,11 @@ public:
 	void addObject(SimpleObject3D* object);
 	SimpleObject3D* getObject(int index);
 
-	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 	void rotate(const QQuaternion& r);
 	void translate(const QVector3D& t);
 	void scale(const float& s);
 	void setGlobalTransform(const QMatrix4x4& g);
+	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 
 private:
 	QVector<SimpleObject3D*> objects;

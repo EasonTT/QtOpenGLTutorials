@@ -1,8 +1,22 @@
 #include "MaterialLibrary.h"
 
+/*
+Description:
+	This function is a constructor;
+Input:
+	@ void parameter: void;
+*/
 MaterialLibrary::MaterialLibrary() {
 }
 
+/*
+Description:
+	This function is used to add material to the material list;
+Input:
+	@ Material * mateiral: a given material;
+Output:
+	@ void returnValue: void;
+*/
 void MaterialLibrary::addMaterial(Material* material) {
 
 	if (!material) return;
@@ -16,6 +30,14 @@ void MaterialLibrary::addMaterial(Material* material) {
 	materials.append(material);
 }
 
+/*
+Description:
+	This function is used to get material from the material list by its index;
+Input:
+	@ const int index: a index refer to the material;
+Output:
+	@ Material * returnValue: a material;
+*/
 Material* MaterialLibrary::getMaterial(int index) {
 	if (index < materials.size()) {
 		return materials[index];
@@ -25,6 +47,14 @@ Material* MaterialLibrary::getMaterial(int index) {
 	}
 }
 
+/*
+Description:
+	This function is used to get material from the material list by its name;
+Input:
+	@ const QString & materialName: a name refer to the material;
+Output:
+	@ Material * returnValue: a material;
+*/
 Material* MaterialLibrary::getMaterial(const QString& materialName) {
 	for (int i = 0; i < materials.size(); i++) {
 		if (materials[i]->getMaterialName() == materialName) {
@@ -34,10 +64,27 @@ Material* MaterialLibrary::getMaterial(const QString& materialName) {
 	return 0;
 }
 
+/*
+Description:
+	This function is used to get total amount of materials in the material library;
+Input:
+	@ void parameter;
+Output:
+	@ int returnValue: the total amount of materials;
+*/
 int MaterialLibrary::getCount() {
 	return materials.size();
 }
 
+/*
+Description:
+	This function is used to load .mtl file froma given file path, the .mtl file should include
+	material name [newmtl], ambience color [Ka], diffuse color [Kd], specular color [Ks], shinnes [Ns], diffuse map file name [map_Kd], etc.
+Input:
+	@ const QString & fileName: the path refer to the .mtl file
+Output:
+	@ void returnValue: void;
+*/
 void MaterialLibrary::loadMaterialFromFile(const QString& fileName) {
 	QFile materialFile(fileName);
 

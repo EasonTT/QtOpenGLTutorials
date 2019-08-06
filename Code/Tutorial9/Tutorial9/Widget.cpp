@@ -1,12 +1,23 @@
 #include "Widget.h"
 
+/*
+Description:
+	This function is a constructor;
+Input:
+	@ QWidget* parent:
+*/
 Widget::Widget(QWidget* parent) :
 	QOpenGLWidget(parent) {
-	//z = -5.0;
 	camera = new Camera3D;
 	camera->translate(QVector3D(0.0, 0.0, -5.0));
 }
 
+/*
+Description:
+	This function is a destructor;
+Input:
+	@ void patameter: void;
+*/
 Widget::~Widget() {
 	delete camera;
 
@@ -15,68 +26,17 @@ Widget::~Widget() {
 
 	for (int i = 0; i < groups.size(); i++)
 		delete groups[i];
-
-	//for (int i = 0; i < transformObjects.size(); i++)
-		//delete transformObjects[i];
 }
 
+/*
+Description:
+	This function is used to initialize OpenGL state machine, and initialize shaders ,objects and etc.;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initializeGL() {
-
-	//setFocusPolicy(Qt::StrongFocus);
-
-	//// clear the screen with black
-	//glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-
-	//glEnable(GL_DEPTH_TEST);
-	//glEnable(GL_CULL_FACE);
-
-	//// initialize shaders
-	//initShaders();
-
-	//skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
-
-	//float step = 1.0f;
-
-	//groups.append(new Group3D);
-	//for (float x = -step; x <= step; x += 2 * step) {
-	//	for (float y = -step; y <= step; y += 2 * step) {
-	//		for (float z = -step; z <= step; z += 2 * step) {
-	//			initCube(0.5f);
-	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-	//		}
-	//	}
-	//}
-	//groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
-
-	//groups.append(new Group3D);
-	//for (float x = -step; x <= step; x += 2 * step) {
-	//	for (float y = -step; y <= step; y += 2 * step) {
-	//		for (float z = -step; z <= step; z += 2 * step) {
-	//			initCube(0.5f);
-	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-	//		}
-	//	}
-	//}
-	//groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
-
-	//groups.append(new Group3D);
-	//groups[2]->addObject(groups[0]);
-	//groups[2]->addObject(groups[1]);
-
-	//transformObjects.append(groups[2]);
-
-	//objects.append(new ObjectEngine3D);
-	//objects[objects.size() - 1]->loadObjectFromFile("./human.obj");
-	//transformObjects.append(objects[objects.size() - 1]);
-
-	//groups[0]->addObject(camera);
-
-	//timer.start(10, this);
-
-	//-----------------------------------------------------
-
 	setFocusPolicy(Qt::StrongFocus);
 
 	// clear the screen with black
@@ -90,49 +50,58 @@ void Widget::initializeGL() {
 
 	skybox = new Skybox(40, QImage("./skybox.jpg").mirrored());
 
-	//float step = 1.0f;
+	float step = 1.0f;
 
-	//groups.append(new Group3D);
-	//for (float x = -step; x <= step; x += 2 * step) {
-	//	for (float y = -step; y <= step; y += 2 * step) {
-	//		for (float z = -step; z <= step; z += 2 * step) {
-	//			initCube(0.5f);
-	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-	//		}
-	//	}
-	//}
-	//groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
+	groups.append(new Group3D);
+	for (float x = -step; x <= step; x += 2 * step) {
+		for (float y = -step; y <= step; y += 2 * step) {
+			for (float z = -step; z <= step; z += 2 * step) {
+				initCube(0.5f);
+				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+			}
+		}
+	}
+	groups[0]->translate(QVector3D(-4.0, 0.0, 0.0));
 
-	//groups.append(new Group3D);
-	//for (float x = -step; x <= step; x += 2 * step) {
-	//	for (float y = -step; y <= step; y += 2 * step) {
-	//		for (float z = -step; z <= step; z += 2 * step) {
-	//			initCube(0.5f);
-	//			objects[objects.size() - 1]->translate(QVector3D(x, y, z));
-	//			groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
-	//		}
-	//	}
-	//}
-	//groups[1]->translate(QVector3D(8.0, 0.0, 0.0));
+	groups.append(new Group3D);
+	for (float x = -step; x <= step; x += 2 * step) {
+		for (float y = -step; y <= step; y += 2 * step) {
+			for (float z = -step; z <= step; z += 2 * step) {
+				initCube(0.5f);
+				objects[objects.size() - 1]->translate(QVector3D(x, y, z));
+				groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
+			}
+		}
+	}
+	groups[1]->translate(QVector3D(4.0, 0.0, 0.0));
 
-	//groups.append(new Group3D);
-	//groups[2]->addObject(groups[0]);
-	//groups[2]->addObject(groups[1]);
+	groups.append(new Group3D);
+	groups[2]->addObject(groups[0]);
+	groups[2]->addObject(groups[1]);
 
-	//transformObjects.append(groups[2]);
+	transformObjects.append(groups[2]);
 
 	groups.append(new Group3D);
 	objects.append(new ObjectEngine3D);
-	objects[objects.size() - 1]->loadObjectFromFile("./cube.obj");
+	objects[objects.size() - 1]->loadObjectFromFile("./model_textured.obj");
 	groups[groups.size() - 1]->addObject(objects[objects.size() - 1]);
 	transformObjects.append(groups[groups.size() - 1]);
 
 	groups[0]->addObject(camera);
 
-	//timer.start(10, this);
+	timer.start(10, this);
 }
 
+/*
+Description:
+	This function is used to deal with resive event;
+Input:
+	@ int width: window width after resize event;
+	@ int height: window height after resize event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::resizeGL(int width, int height) {
 	float aspect = width / (float)height;
 
@@ -140,6 +109,14 @@ void Widget::resizeGL(int width, int height) {
 	pMatrix.perspective(45, aspect, 0.01f, 500.0f);
 }
 
+/*
+Description:
+	This function is used to set parameters for the vertex shader, fragment shader and etc. and draw other objects;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -162,6 +139,14 @@ void Widget::paintGL() {
 	objectShader.release();
 }
 
+/*
+Description:
+	This function is used to process mouse events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a mouse event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::mousePressEvent(QMouseEvent* event) {
 	if (event->buttons() == Qt::LeftButton)
 		mousePosition = QVector2D(event->localPos());
@@ -169,6 +154,14 @@ void Widget::mousePressEvent(QMouseEvent* event) {
 	update();
 }
 
+/*
+Description:
+	This function is used to process mouse move events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a mouse move event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::mouseMoveEvent(QMouseEvent* event) {
 	if (event->buttons() != Qt::LeftButton) return;
 
@@ -184,6 +177,14 @@ void Widget::mouseMoveEvent(QMouseEvent* event) {
 	update();
 }
 
+/*
+Description:
+	This function is used to process wheel events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a wheel event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::wheelEvent(QWheelEvent* event) {
 	if (event->delta() > 0) {
 		camera->translate(QVector3D(0.0, 0.0, 0.25));
@@ -194,6 +195,14 @@ void Widget::wheelEvent(QWheelEvent* event) {
 	update();
 }
 
+/*
+Description:
+	This function is used to process timer events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a timer event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::timerEvent(QTimerEvent* event) {
 	for (int i = 0; i < objects.size() - 1; i++) {
 		if (i % 2 == 0) {
@@ -223,6 +232,14 @@ void Widget::timerEvent(QTimerEvent* event) {
 	update();
 }
 
+/*
+Description:
+	This function is used to process key events, which is a Qt event function;
+Intput:
+	@ QKeyEvent* event: a key event;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::keyPressEvent(QKeyEvent* event) {
 
 	switch (event->key()) {
@@ -249,6 +266,14 @@ break;
 	update();
 }
 
+/*
+Description:
+	This function is used to initialize shaders objects;
+Input:
+	@ void parameter: void;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initShaders() {
 	if (!objectShader.addShaderFromSourceFile(QOpenGLShader::Vertex, "./Object.vsh")) {
 		QString log = objectShader.log();
@@ -277,6 +302,14 @@ void Widget::initShaders() {
 	}
 }
 
+/*
+Description:
+	This function is used to load graphics data for a cube, including vertex data and index data;
+Input:
+	@ int width: the width of the cube;
+Output:
+	@ void returnValue: void;
+*/
 void Widget::initCube(float width) {
 	QVector<Vertex> vertices;
 	vertices <<
@@ -327,44 +360,3 @@ void Widget::initCube(float width) {
 
 	objects << objectEngine;
 }
-//
-//void Widget::loadObj(const QString& path) {
-//	QFile objFile(path);
-//	if (!objFile.exists()) {
-//		return;
-//	}
-//
-//	QVector<QVector3D> verCoords;
-//	QVector<QVector2D> texCoords;
-//	QVector<QVector3D> normals;
-//	QVector<Vertex> vertices;
-//	QVector<GLuint> indices;
-//
-//	objFile.open(QIODevice::ReadOnly);
-//	QTextStream input(&objFile);
-//
-//	while (!input.atEnd()) {
-//		QString line = input.readLine();
-//		QStringList list = line.split(" ");
-//		if (list[0] == "v") {
-//			verCoords << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
-//		}
-//		else if (list[0] == "vt") {
-//			texCoords << QVector2D(list[1].toFloat(), list[2].toFloat());
-//		}
-//		else if (list[0] == "vn"){
-//			normals << QVector3D(list[1].toFloat(), list[2].toFloat(), list[3].toFloat());
-//		}
-//		else if (list[0] == "f") {
-//			for (int i = 1; i <= 3; i++) {
-//				QStringList v = list[i].split("/");
-//				vertices.append(Vertex(verCoords[v[0].toLong() - 1], texCoords[v[1].toLong() - 1], normals[v[2].toLong() - 1]));
-//				indices.append(indices.size());
-//			}
-//		}
-//	}
-//
-//	objFile.close();
-//
-//	objects.append(new SimpleObject3D(vertices, indices, QImage("./cube.jpg")));
-//}

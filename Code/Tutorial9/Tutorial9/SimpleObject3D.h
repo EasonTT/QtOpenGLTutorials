@@ -24,11 +24,11 @@ public:
 	SimpleObject3D(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material* material);
 	~SimpleObject3D();
 	void init(const QVector<Vertex>& vertices, const QVector<GLuint>& indices, Material* material);
-	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 	void rotate(const QQuaternion& r);
 	void translate(const QVector3D& t);
 	void scale(const float& s);
 	void setGlobalTransform(const QMatrix4x4& g);
+	void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions);
 
 private:
 	QOpenGLBuffer vertexBuffer;
