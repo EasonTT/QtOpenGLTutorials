@@ -35,7 +35,7 @@ protected:
 
 	void initShaders();
 	void initCube(float width);
-	void loadObj(const QString &path);
+	void loadObj(const QString & filePath);
 
 private:
 	QMatrix4x4 pMatrix;

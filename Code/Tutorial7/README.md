@@ -27,7 +27,7 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 >>> 
 >>> void setGlobalTransform(const QMatrix4x4& g): This function is used to set the global transform for the camera;
 >>> 
->>>void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions): This function is used to set parameters for the vertex shader, fragment shader and etc.;
+>>> void draw(QOpenGLShaderProgram* shaderProgram, QOpenGLFunctions* functions): This function is used to set parameters for the vertex shader, fragment shader and etc.;
 >>
 >> [Group3D.h](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Group3D.h): Derived from Transformational class, used to define a group of objects (model matrix);
 >>

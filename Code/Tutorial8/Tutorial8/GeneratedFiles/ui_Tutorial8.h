@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'Tutorial8.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.3
+** Created by: Qt User Interface Compiler version 5.13.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -66,7 +66,7 @@ public:
 
     void retranslateUi(QMainWindow *Tutorial8Class)
     {
-        Tutorial8Class->setWindowTitle(QApplication::translate("Tutorial8Class", "Tutorial8", nullptr));
+        Tutorial8Class->setWindowTitle(QCoreApplication::translate("Tutorial8Class", "Tutorial8", nullptr));
     } // retranslateUi
 
 };
