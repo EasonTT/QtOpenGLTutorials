@@ -113,19 +113,19 @@ This tutorial solution develop functions to load .obj files;
 >>
 >
 > Source Files
->> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Camera3D.cpp): implement Camera3D.h;
+>> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Camera3D.cpp): implements Camera3D.h;
 >>
->> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Group3D.cpp): implement Group3D.h;
+>> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Group3D.cpp): implements Group3D.h;
 >>
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/main.cpp);
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/SimpleObject3D.cpp): implements SimpleObject3D.h;
 >>
->> [Skybox.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Skybox.cpp): implement Skybox.h;
+>> [Skybox.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Skybox.cpp): implements Skybox.h;
 >>
->> [Tutorial8.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Tutorial8.cpp): implement Tutorial8.h;
+>> [Tutorial8.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Tutorial8.cpp): implements Tutorial8.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >> [Object.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Object.fsh): The fragment shader implements phong shading for objects including diffuse light, ambient light, as well as specular light;

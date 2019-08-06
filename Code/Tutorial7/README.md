@@ -111,19 +111,19 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 >>
 >
 > Source Files
->> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Camera3D.cpp): implement Camera3D.h;
+>> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Camera3D.cpp): implements Camera3D.h;
 >>
->> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Group3D.cpp): implement Group3D.h;
+>> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Group3D.cpp): implements Group3D.h;
 >>
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/main.cpp);
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/SimpleObject3D.cpp): implements SimpleObject3D.h;
 >>
->> [Skybox.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.cpp): implement Skybox.h;
+>> [Skybox.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.cpp): implements Skybox.h;
 >>
->> [Tutorial7.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Tutorial7.cpp): implement Tutorial7.h;
+>> [Tutorial7.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Tutorial7.cpp): implements Tutorial7.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >> [Object.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Object.fsh): The fragment shader implements phong shading for objects including diffuse light, ambient light, as well as specular light;

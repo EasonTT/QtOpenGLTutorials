@@ -84,15 +84,15 @@ This tutorial solution introduces an timer with a timer event;
 >
 > Source Files
 >
->> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.cpp): implement Group3D.h;
+>> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Group3D.cpp): implements Group3D.h;
 >>
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/main.cpp)
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/SimpleObject3D.cpp): implements SimpleObject3D.h;
 >>
->> [Tutorial5.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.cpp): implement Tutorial5.h;
+>> [Tutorial5.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.cpp): implements Tutorial5.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >

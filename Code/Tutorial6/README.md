@@ -99,17 +99,17 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >>
 >
 > Source Files
->> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Camera3D.cpp): implement Camera3D.h;
+>> [Camera3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Camera3D.cpp): implements Camera3D.h;
 >>
->> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Group3D.cpp): implement Group3D.h;
+>> [Group3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Group3D.cpp): implements Group3D.h;
 >>
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/main.cpp);
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/SimpleObject3D.cpp): implements SimpleObject3D.h;
 >>
->> [Tutorial6.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Tutorial6.cpp): implement Tutorial6.h;
+>> [Tutorial6.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Tutorial6.cpp): implements Tutorial6.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;

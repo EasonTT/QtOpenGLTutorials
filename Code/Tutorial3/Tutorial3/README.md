@@ -47,11 +47,11 @@ This tutorial solution introduces how to add other objects and translate it to a
 > Source Files
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/main.cpp)
 >>
->> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/SimpleObject3D.cpp): implement SimpleObject3D.h;
+>> [SimpleObject3D.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/SimpleObject3D.cpp): implements SimpleObject3D.h;
 >>
->> [Tutorial3.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Tutorial3.cpp): implement Tutorial3.h;
+>> [Tutorial3.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Tutorial3.cpp): implements Tutorial3.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;

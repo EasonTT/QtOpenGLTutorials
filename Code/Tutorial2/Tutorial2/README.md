@@ -39,9 +39,9 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
 > Source Files
 >> [main.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/main.cpp)
 >>
->> [Tutorial2.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Tutorial2.cpp): implement Tutorial2.h;
+>> [Tutorial2.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Tutorial2.cpp): implements Tutorial2.h;
 >>
->> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Widget.cpp): implement Widget.h;
+>> [Widget.cpp](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Widget.cpp): implements Widget.h;
 >
 > Shader Files
 >> [FragmentShader.fsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/FragmentShader.fsh): The fragment shader implements phong shading including diffuse light, ambient light, as well as specular light;
