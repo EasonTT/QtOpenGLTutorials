@@ -85,303 +85,302 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 
 ## Project Structure:
 QtOpenGLTutorials:.  
-|   .gitattributes  
-|   .gitignore  
-|   README.md  
-|  
-+---Code  
-|   +---Tutorial1  
-|   |   |   README.md  
-|   |   |   Tutorial1.sln  
-|   |   |  
-|   |   \---Tutorial1  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.jpg  
-|   |       |   Tutorial1.cpp  
-|   |       |   Tutorial1.h  
-|   |       |   Tutorial1.qrc  
-|   |       |   Tutorial1.ui  
-|   |       |   Tutorial1.vcxproj  
-|   |       |   Tutorial1.vcxproj.filters  
-|   |       |   VertexShader.hlsl  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial1.cpp  
-|   |               ui_Tutorial1.h  
-|   |  
-|   +---Tutorial2  
-|   |   |   README.md  
-|   |   |   Tutorial2.sln  
-|   |   |  
-|   |   \---Tutorial2  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.jpg  
-|   |       |   Tutorial2.cpp  
-|   |       |   Tutorial2.h  
-|   |       |   Tutorial2.qrc  
-|   |       |   Tutorial2.ui  
-|   |       |   Tutorial2.vcxproj  
-|   |       |   Tutorial2.vcxproj.filters  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial2.cpp  
-|   |               ui_Tutorial2.h  
-|   |  
-|   +---Tutorial3  
-|   |   |   README.md  
-|   |   |   Tutorial3.sln  
-|   |   |  
-|   |   \---Tutorial3  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.jpg  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Tutorial3.cpp  
-|   |       |   Tutorial3.h  
-|   |       |   Tutorial3.qrc  
-|   |       |   Tutorial3.ui  
-|   |       |   Tutorial3.vcxproj  
-|   |       |   Tutorial3.vcxproj.filters  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial3.cpp  
-|   |               ui_Tutorial3.h  
-|   |  
-|   +---Tutorial4  
-|   |   |   README.md  
-|   |   |   Tutorial4.sln  
-|   |   |  
-|   |   \---Tutorial4  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   Group3D.cpp  
-|   |       |   Group3D.h  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.jpg  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Transformational.h  
-|   |       |   Tutorial4.cpp  
-|   |       |   Tutorial4.h  
-|   |       |   Tutorial4.qrc  
-|   |       |   Tutorial4.ui  
-|   |       |   Tutorial4.vcxproj  
-|   |       |   Tutorial4.vcxproj.filters  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial4.cpp  
-|   |               ui_Tutorial4.h  
-|   |  
-|   +---Tutorial5  
-|   |   |   README.md  
-|   |   |   Tutorial5.sln  
-|   |   |  
-|   |   \---Tutorial5  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   Group3D.cpp  
-|   |       |   Group3D.h  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.gif  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Transformational.h  
-|   |       |   Tutorial5.cpp  
-|   |       |   Tutorial5.h  
-|   |       |   Tutorial5.qrc  
-|   |       |   Tutorial5.ui  
-|   |       |   Tutorial5.vcxproj  
-|   |       |   Tutorial5.vcxproj.filters  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial5.cpp  
-|   |               ui_Tutorial5.h  
-|   |  
-|   +---Tutorial6  
-|   |   |   README.md  
-|   |   |   Tutorial6.sln  
-|   |   |  
-|   |   \---Tutorial6  
-|   |       |   Camera3D.cpp  
-|   |       |   Camera3D.h  
-|   |       |   cube.jpg  
-|   |       |   FragmentShader.fsh  
-|   |       |   Group3D.cpp  
-|   |       |   Group3D.h  
-|   |       |   main.cpp  
-|   |       |   README.md  
-|   |       |   result.gif  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Transformational.h  
-|   |       |   Tutorial6.cpp  
-|   |       |   Tutorial6.h  
-|   |       |   Tutorial6.qrc  
-|   |       |   Tutorial6.ui  
-|   |       |   Tutorial6.vcxproj  
-|   |       |   Tutorial6.vcxproj.filters  
-|   |       |   VertexShader.vsh  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial6.cpp  
-|   |               ui_Tutorial6.h  
-|   |  
-|   +---Tutorial7  
-|   |   |   README.md  
-|   |   |   Tutorial7.sln  
-|   |   |  
-|   |   \---Tutorial7  
-|   |       |   Camera3D.cpp  
-|   |       |   Camera3D.h  
-|   |       |   cube.jpg  
-|   |       |   Group3D.cpp  
-|   |       |   Group3D.h  
-|   |       |   main.cpp  
-|   |       |   Object.fsh  
-|   |       |   Object.vsh  
-|   |       |   README.md  
-|   |       |   result.gif  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Skybox.cpp  
-|   |       |   Skybox.fsh  
-|   |       |   Skybox.h  
-|   |       |   skybox.jpg  
-|   |       |   Skybox.vsh  
-|   |       |   Transformational.h  
-|   |       |   Tutorial7.cpp  
-|   |       |   Tutorial7.h  
-|   |       |   Tutorial7.qrc  
-|   |       |   Tutorial7.ui  
-|   |       |   Tutorial7.vcxproj  
-|   |       |   Tutorial7.vcxproj.filters  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial7.cpp  
-|   |               ui_Tutorial7.h  
-|   |  
-|   +---Tutorial8  
-|   |   |   README.md  
-|   |   |   Tutorial8.sln  
-|   |   |  
-|   |   \---Tutorial8  
-|   |       |   Camera3D.cpp  
-|   |       |   Camera3D.h  
-|   |       |   cube.jpg  
-|   |       |   Group3D.cpp  
-|   |       |   Group3D.h  
-|   |       |   main.cpp  
-|   |       |   Object.fsh  
-|   |       |   Object.vsh  
-|   |       |   README.md  
-|   |       |   result.gif  
-|   |       |   SimpleObject3D.cpp  
-|   |       |   SimpleObject3D.h  
-|   |       |   Skybox.cpp  
-|   |       |   Skybox.fsh  
-|   |       |   Skybox.h  
-|   |       |   skybox.jpg  
-|   |       |   Skybox.vsh  
-|   |       |   sphere.obj  
-|   |       |   Transformational.h  
-|   |       |   Tutorial8.cpp  
-|   |       |   Tutorial8.h  
-|   |       |   Tutorial8.qrc  
-|   |       |   Tutorial8.ui  
-|   |       |   Tutorial8.vcxproj  
-|   |       |   Tutorial8.vcxproj.filters  
-|   |       |   Widget.cpp  
-|   |       |   Widget.h  
-|   |       |  
-|   |       \---GeneratedFiles  
-|   |               qrc_Tutorial8.cpp  
-|   |               ui_Tutorial8.h  
-|   |  
-|   \---Tutorial9  
-|       |   README.md  
-|       |   Tutorial9.sln  
-|       |  
-|       \---Tutorial9  
-|           |   Camera3D.cpp  
-|           |   Camera3D.h  
-|           |   cube.jpg  
-|           |   Group3D.cpp  
-|           |   Group3D.h  
-|           |   main.cpp  
-|           |   Material.cpp  
-|           |   Material.h  
-|           |   MaterialLibrary.cpp  
-|           |   MaterialLibrary.h  
-|           |   model_textured.jpg  
-|           |   model_textured.mtl  
-|           |   model_textured.obj  
-|           |   Object.fsh  
-|           |   Object.vsh  
-|           |   ObjectEngine3D.cpp  
-|           |   ObjectEngine3D.h  
-|           |   README.md  
-|           |   result.gif  
-|           |   SimpleObject3D.cpp  
-|           |   SimpleObject3D.h  
-|           |   Skybox.cpp  
-|           |   Skybox.fsh  
-|           |   Skybox.h  
-|           |   skybox.jpg  
-|           |   Skybox.vsh  
-|           |   Transformational.h  
-|           |   Tutorial9.cpp  
-|           |   Tutorial9.h  
-|           |   Tutorial9.qrc  
-|           |   Tutorial9.ui  
-|           |   Tutorial9.vcxproj  
-|           |   Tutorial9.vcxproj.filters  
-|           |   Widget.cpp  
-|           |   Widget.h  
-|           |  
-|           \---GeneratedFiles  
-|                   qrc_Tutorial9.cpp  
-|                   ui_Tutorial9.h  
-|  
-\---data  
-        cube.mtl  
-        cube.obj  
-        cube1.jpg  
-        cube2.jpg  
-        pyramid.obj  
-        skybox1.jpg  
-        skybox2.jpg  
-        skybox3.jpg  
-        skybox4.jpg  
-        sphere.mtl  
-        sphere.obj  
-        
+│   .gitattributes
+│   .gitignore
+│   README.md
+│
+├───Code
+│   ├───Tutorial1
+│   │   │   README.md
+│   │   │   Tutorial1.sln
+│   │   │
+│   │   └───Tutorial1
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.jpg
+│   │       │   Tutorial1.cpp
+│   │       │   Tutorial1.h
+│   │       │   Tutorial1.qrc
+│   │       │   Tutorial1.ui
+│   │       │   Tutorial1.vcxproj
+│   │       │   Tutorial1.vcxproj.filters
+│   │       │   VertexShader.hlsl
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial1.cpp
+│   │               ui_Tutorial1.h
+│   │
+│   ├───Tutorial2
+│   │   │   README.md
+│   │   │   Tutorial2.sln
+│   │   │
+│   │   └───Tutorial2
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.jpg
+│   │       │   Tutorial2.cpp
+│   │       │   Tutorial2.h
+│   │       │   Tutorial2.qrc
+│   │       │   Tutorial2.ui
+│   │       │   Tutorial2.vcxproj
+│   │       │   Tutorial2.vcxproj.filters
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial2.cpp
+│   │               ui_Tutorial2.h
+│   │
+│   ├───Tutorial3
+│   │   │   README.md
+│   │   │   Tutorial3.sln
+│   │   │
+│   │   └───Tutorial3
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.jpg
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Tutorial3.cpp
+│   │       │   Tutorial3.h
+│   │       │   Tutorial3.qrc
+│   │       │   Tutorial3.ui
+│   │       │   Tutorial3.vcxproj
+│   │       │   Tutorial3.vcxproj.filters
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial3.cpp
+│   │               ui_Tutorial3.h
+│   │
+│   ├───Tutorial4
+│   │   │   README.md
+│   │   │   Tutorial4.sln
+│   │   │
+│   │   └───Tutorial4
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   Group3D.cpp
+│   │       │   Group3D.h
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.jpg
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Transformational.h
+│   │       │   Tutorial4.cpp
+│   │       │   Tutorial4.h
+│   │       │   Tutorial4.qrc
+│   │       │   Tutorial4.ui
+│   │       │   Tutorial4.vcxproj
+│   │       │   Tutorial4.vcxproj.filters
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial4.cpp
+│   │               ui_Tutorial4.h
+│   │
+│   ├───Tutorial5
+│   │   │   README.md
+│   │   │   Tutorial5.sln
+│   │   │
+│   │   └───Tutorial5
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   Group3D.cpp
+│   │       │   Group3D.h
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.gif
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Transformational.h
+│   │       │   Tutorial5.cpp
+│   │       │   Tutorial5.h
+│   │       │   Tutorial5.qrc
+│   │       │   Tutorial5.ui
+│   │       │   Tutorial5.vcxproj
+│   │       │   Tutorial5.vcxproj.filters
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial5.cpp
+│   │               ui_Tutorial5.h
+│   │
+│   ├───Tutorial6
+│   │   │   README.md
+│   │   │   Tutorial6.sln
+│   │   │
+│   │   └───Tutorial6
+│   │       │   Camera3D.cpp
+│   │       │   Camera3D.h
+│   │       │   cube.jpg
+│   │       │   FragmentShader.fsh
+│   │       │   Group3D.cpp
+│   │       │   Group3D.h
+│   │       │   main.cpp
+│   │       │   README.md
+│   │       │   result.gif
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Transformational.h
+│   │       │   Tutorial6.cpp
+│   │       │   Tutorial6.h
+│   │       │   Tutorial6.qrc
+│   │       │   Tutorial6.ui
+│   │       │   Tutorial6.vcxproj
+│   │       │   Tutorial6.vcxproj.filters
+│   │       │   VertexShader.vsh
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial6.cpp
+│   │               ui_Tutorial6.h
+│   │
+│   ├───Tutorial7
+│   │   │   README.md
+│   │   │   Tutorial7.sln
+│   │   │
+│   │   └───Tutorial7
+│   │       │   Camera3D.cpp
+│   │       │   Camera3D.h
+│   │       │   cube.jpg
+│   │       │   Group3D.cpp
+│   │       │   Group3D.h
+│   │       │   main.cpp
+│   │       │   Object.fsh
+│   │       │   Object.vsh
+│   │       │   README.md
+│   │       │   result.gif
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Skybox.cpp
+│   │       │   Skybox.fsh
+│   │       │   Skybox.h
+│   │       │   skybox.jpg
+│   │       │   Skybox.vsh
+│   │       │   Transformational.h
+│   │       │   Tutorial7.cpp
+│   │       │   Tutorial7.h
+│   │       │   Tutorial7.qrc
+│   │       │   Tutorial7.ui
+│   │       │   Tutorial7.vcxproj
+│   │       │   Tutorial7.vcxproj.filters
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial7.cpp
+│   │               ui_Tutorial7.h
+│   │
+│   ├───Tutorial8
+│   │   │   README.md
+│   │   │   Tutorial8.sln
+│   │   │
+│   │   └───Tutorial8
+│   │       │   Camera3D.cpp
+│   │       │   Camera3D.h
+│   │       │   cube.jpg
+│   │       │   Group3D.cpp
+│   │       │   Group3D.h
+│   │       │   main.cpp
+│   │       │   Object.fsh
+│   │       │   Object.vsh
+│   │       │   README.md
+│   │       │   result.gif
+│   │       │   SimpleObject3D.cpp
+│   │       │   SimpleObject3D.h
+│   │       │   Skybox.cpp
+│   │       │   Skybox.fsh
+│   │       │   Skybox.h
+│   │       │   skybox.jpg
+│   │       │   Skybox.vsh
+│   │       │   sphere.obj
+│   │       │   Transformational.h
+│   │       │   Tutorial8.cpp
+│   │       │   Tutorial8.h
+│   │       │   Tutorial8.qrc
+│   │       │   Tutorial8.ui
+│   │       │   Tutorial8.vcxproj
+│   │       │   Tutorial8.vcxproj.filters
+│   │       │   Widget.cpp
+│   │       │   Widget.h
+│   │       │
+│   │       └───GeneratedFiles
+│   │               qrc_Tutorial8.cpp
+│   │               ui_Tutorial8.h
+│   │
+│   └───Tutorial9
+│       │   README.md
+│       │   Tutorial9.sln
+│       │
+│       └───Tutorial9
+│           │   Camera3D.cpp
+│           │   Camera3D.h
+│           │   cube.jpg
+│           │   Group3D.cpp
+│           │   Group3D.h
+│           │   main.cpp
+│           │   Material.cpp
+│           │   Material.h
+│           │   MaterialLibrary.cpp
+│           │   MaterialLibrary.h
+│           │   model_textured.jpg
+│           │   model_textured.mtl
+│           │   model_textured.obj
+│           │   Object.fsh
+│           │   Object.vsh
+│           │   ObjectEngine3D.cpp
+│           │   ObjectEngine3D.h
+│           │   README.md
+│           │   result.gif
+│           │   SimpleObject3D.cpp
+│           │   SimpleObject3D.h
+│           │   Skybox.cpp
+│           │   Skybox.fsh
+│           │   Skybox.h
+│           │   skybox.jpg
+│           │   Skybox.vsh
+│           │   Transformational.h
+│           │   Tutorial9.cpp
+│           │   Tutorial9.h
+│           │   Tutorial9.qrc
+│           │   Tutorial9.ui
+│           │   Tutorial9.vcxproj
+│           │   Tutorial9.vcxproj.filters
+│           │   Widget.cpp
+│           │   Widget.h
+│           │
+│           └───GeneratedFiles
+│                   qrc_Tutorial9.cpp
+│                   ui_Tutorial9.h
+│
+└───data
+        cube.mtl
+        cube.obj
+        cube1.jpg
+        cube2.jpg
+        pyramid.obj
+        skybox1.jpg
+        skybox2.jpg
+        skybox3.jpg
+        skybox4.jpg
+        sphere.mtl
+        sphere.obj
