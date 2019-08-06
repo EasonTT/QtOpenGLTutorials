@@ -1,15 +1,15 @@
 QtOpenGLTutorials
 =================
 
-# Project Introduction:
+## Project Introduction:
 This project is a Qt tutorial on using OpenGL, which is 
 
-# Project Environment:
+## Project Environment:
 * Windows 10
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Project Overview:
+## Project Overview:
 > Tutorial 1: Project Template
 >
 >> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/result.jpg)
