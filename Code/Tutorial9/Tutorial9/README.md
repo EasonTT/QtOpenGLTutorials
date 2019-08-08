@@ -1,10 +1,10 @@
 Tutorial 9 - Load Materials from MTL File
 =============================
 
-# Tutorial 9 Result
-![Tutorial 9](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/result.gif)
+# Tutorial 9 Result:
+![Tutorial 9](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial9/result.gif)
 
-# Solution Introduction
+# Solution Introduction:
 This tutorial solution develop functions to load .mtl files, and encapsulate object with MaterialLibrary to ObjectEngine3D;
 
 # Solution Environment:

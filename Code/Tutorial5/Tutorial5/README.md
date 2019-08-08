@@ -2,7 +2,7 @@ Tutorial 5 - Object Groupings (3/3)
 =============================
 
 # Tutorial 5 Result
-![Tutorial 5](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/result.gif)
+![Tutorial 5](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial5/result.gif)
 
 # Solution Introduction
 This tutorial solution introduces an timer with a timer event;

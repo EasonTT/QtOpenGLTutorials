@@ -14,7 +14,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=HgoKrrf4iks)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/result.jpg)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial1/result.jpg)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial1/Tutorial1)
 >
@@ -22,7 +22,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=Ww-aoNC8VQU)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/result.jpg)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial2/result.jpg)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial2/Tutorial2)
 >
@@ -30,15 +30,15 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=OyPlRxBRJqs)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/result.jpg)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial3/result.jpg)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial3/Tutorial3)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/result.jpg)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial4/result.jpg)
 >> 
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial4/Tutorial4)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial5/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial5/Tutorial5)
 >
@@ -46,7 +46,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=Un6pCMT5HDE)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial6/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial6/Tutorial6)
 >
@@ -54,7 +54,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=-adEM8bTaeo)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial7/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial7/Tutorial7)
 >
@@ -62,7 +62,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=yM9v9vnNoIE)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial8/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial8/Tutorial8)
 >
@@ -70,7 +70,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=AEK_-4rtF1o)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial9/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial9/Tutorial9)
 >
@@ -78,7 +78,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=71HR8glNudc)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial9/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial9/Tutorial9)
 >
@@ -86,7 +86,7 @@ This project is a Qt tutorial on using OpenGL, which is based on a [Youtube Tuto
 >
 >> [Youtube Link](https://www.youtube.com/watch?v=TadCATIDZ2c)
 >>
->> ![Tutorial Result](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/result.gif)
+>> ![Tutorial Result](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial9/result.gif)
 >>
 >> [Source Code](https://github.com/jingyangcarl/QtOpenGLTutorials/tree/master/Code/Tutorial9/Tutorial9)
 >

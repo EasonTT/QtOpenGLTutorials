@@ -2,7 +2,7 @@ Tutorial 3 - Object Groupings (1/3)
 =============================
 
 # Tutorial 3 Result
-![Tutorial 3](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/result.jpg)
+![Tutorial 3](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial3/result.jpg)
 
 # Solution Introduction
 This tutorial solution introduces how to add other objects and translate it to a given position;

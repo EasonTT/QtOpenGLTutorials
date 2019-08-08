@@ -2,7 +2,7 @@ Tutorial 7 - Skybox Surroundings
 =============================
 
 # Tutorial 7 Result
-![Tutorial 7](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/result.gif)
+![Tutorial 7](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial7/result.gif)
 
 # Solution Introduction
 This tutorial solution introduces a skybox and render skybox with other objects simultaneously;

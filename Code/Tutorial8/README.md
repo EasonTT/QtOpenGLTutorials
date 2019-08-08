@@ -2,7 +2,7 @@ Tutorial 8 - Load An Obj File
 =============================
 
 # Tutorial 8 Result
-![Tutorial 8](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/result.gif)
+![Tutorial 8](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial8/result.gif)
 
 # Solution Introduction
 This tutorial solution develop functions to load .obj files;

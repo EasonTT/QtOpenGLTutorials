@@ -2,7 +2,7 @@ Tutorial 1 - Project Template
 =============================
 
 # Tutorial 1 Result
-![Tutorial 1](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/result.jpg)
+![Tutorial 1](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial1/result.jpg)
 
 # Solution Introduction
 This tutorial solution is used to build up an template for using OpenGL with Qt, and display a simple cube with texture;

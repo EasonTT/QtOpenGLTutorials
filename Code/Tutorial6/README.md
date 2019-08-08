@@ -2,7 +2,7 @@ Tutorial 6 - Work with A Camera
 =============================
 
 # Tutorial 6 Result
-![Tutorial 6](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/result.gif)
+![Tutorial 6](https://github.com/jingyangcarl/Resources/blob/master/QtOpenGLTutorials/Tutorial6/result.gif)
 
 # Solution Introduction
 This tutorial solution introduces an camera and makes it able to interact with the keyboard. Pressing up, down, left, and right is able to change the camera view;
