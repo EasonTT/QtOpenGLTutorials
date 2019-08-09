@@ -138,6 +138,7 @@ This tutorial solution develop functions to load .obj files;
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial8
 │   README.md
 │   Tutorial8.sln
@@ -177,3 +178,4 @@ This tutorial solution develop functions to load .obj files;
         │
         └───Release
                 moc_Tutorial8.cpp
+```

@@ -46,6 +46,7 @@ This tutorial solution is used to build up an template for using OpenGL with Qt,
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial1
 │   README.md
 │   Tutorial1.sln
@@ -69,3 +70,4 @@ This tutorial solution is used to build up an template for using OpenGL with Qt,
     └───GeneratedFiles
             qrc_Tutorial1.cpp
             ui_Tutorial1.h
+```

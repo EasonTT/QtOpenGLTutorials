@@ -102,6 +102,7 @@ This tutorial solution introduces an timer with a timer event;
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial5
 │   README.md
 │   Tutorial5.sln
@@ -133,3 +134,4 @@ This tutorial solution introduces an timer with a timer event;
         │
         └───Release
                 moc_Tutorial5.cpp
+```

@@ -50,6 +50,7 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial2
 │   README.md
 │   Tutorial2.sln
@@ -72,3 +73,4 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
     └───GeneratedFiles
             qrc_Tutorial2.cpp
             ui_Tutorial2.h
+```

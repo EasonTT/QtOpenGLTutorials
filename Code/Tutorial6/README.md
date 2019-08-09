@@ -118,6 +118,7 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial6
 │   README.md
 │   Tutorial6.sln
@@ -151,3 +152,4 @@ This tutorial solution introduces an camera and makes it able to interact with t
         │
         └───Release
                 moc_Tutorial6.cpp
+```

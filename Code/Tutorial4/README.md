@@ -96,6 +96,7 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial4
 │   README.md
 │   Tutorial4.sln
@@ -130,4 +131,4 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
         │
         └───Release
                 moc_Tutorial4.cpp
-
+```

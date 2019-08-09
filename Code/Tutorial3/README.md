@@ -60,6 +60,7 @@ This tutorial solution introduces how to add other objects and translate it to a
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial3
 │   README.md
 │   Tutorial3.sln
@@ -91,3 +92,4 @@ This tutorial solution introduces how to add other objects and translate it to a
         │
         └───Release
                 moc_Tutorial3.cpp
+```

@@ -136,6 +136,7 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 >
 
 # Solution Hierarchy:
+```
 ./Tutorial7
 │   README.md
 │   Tutorial7.sln
@@ -177,4 +178,4 @@ This tutorial solution introduces a skybox and render skybox with other objects 
         │
         └───Release
                 moc_Tutorial7.cpp
-
+```
