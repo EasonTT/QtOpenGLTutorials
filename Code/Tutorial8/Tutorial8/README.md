@@ -12,7 +12,7 @@ This tutorial solution develop functions to load .obj files;
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial8.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Tutorial8.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -136,3 +136,44 @@ This tutorial solution develop functions to load .obj files;
 >> 
 >> [Skybox.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial8/Tutorial8/Skybox.vsh): The vertex shader projects skybox vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial8
+│   README.md
+│   Tutorial8.sln
+│
+└───Tutorial8
+    │   Camera3D.cpp
+    │   Camera3D.h
+    │   cube.jpg
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   Object.fsh
+    │   Object.vsh
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Skybox.cpp
+    │   Skybox.fsh
+    │   Skybox.h
+    │   skybox.jpg
+    │   Skybox.vsh
+    │   sphere.obj
+    │   Transformational.h
+    │   Tutorial8.cpp
+    │   Tutorial8.h
+    │   Tutorial8.qrc
+    │   Tutorial8.ui
+    │   Tutorial8.vcxproj
+    │   Tutorial8.vcxproj.filters
+    │   Tutorial8.vcxproj.user
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial8.cpp
+        │   ui_Tutorial8.h
+        │
+        └───Release
+                moc_Tutorial8.cpp

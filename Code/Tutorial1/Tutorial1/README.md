@@ -12,7 +12,7 @@ This tutorial solution is used to build up an template for using OpenGL with Qt,
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial1.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/Tutorial1.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -44,3 +44,28 @@ This tutorial solution is used to build up an template for using OpenGL with Qt,
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial1/Tutorial1/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial1
+│   README.md
+│   Tutorial1.sln
+│
+└───Tutorial1
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   main.cpp
+    │   README.md
+    │   Tutorial1.cpp
+    │   Tutorial1.h
+    │   Tutorial1.qrc
+    │   Tutorial1.ui
+    │   Tutorial1.vcxproj
+    │   Tutorial1.vcxproj.filters
+    │   VertexShader.hlsl
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+            qrc_Tutorial1.cpp
+            ui_Tutorial1.h

@@ -12,7 +12,7 @@ This tutorial solution develop functions to load .mtl files, and encapsulate obj
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial9.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/Tutorial9.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -200,3 +200,56 @@ This tutorial solution develop functions to load .mtl files, and encapsulate obj
 >> 
 >> [Skybox.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial9/Tutorial9/Skybox.vsh): The vertex shader projects skybox vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial9
+│   README.md
+│   Tutorial9.sln
+│
+└───Tutorial9
+    │   Camera3D.cpp
+    │   Camera3D.h
+    │   cube.jpg
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   Material.cpp
+    │   Material.h
+    │   MaterialLibrary.cpp
+    │   MaterialLibrary.h
+    │   model_textured.jpg
+    │   model_textured.mtl
+    │   model_textured.obj
+    │   Object.fsh
+    │   Object.vsh
+    │   ObjectEngine3D.cpp
+    │   ObjectEngine3D.h
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Skybox.cpp
+    │   Skybox.fsh
+    │   Skybox.h
+    │   skybox.jpg
+    │   Skybox.vsh
+    │   Transformational.h
+    │   Tutorial9.cpp
+    │   Tutorial9.h
+    │   Tutorial9.qrc
+    │   Tutorial9.ui
+    │   Tutorial9.vcxproj
+    │   Tutorial9.vcxproj.filters
+    │   Tutorial9.vcxproj.user
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial9.cpp
+        │   ui_Tutorial9.h
+        │
+        ├───Debug
+        │       moc_Tutorial9.cpp
+        │
+        └───Release
+                moc_Tutorial9.cpp
+

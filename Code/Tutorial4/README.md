@@ -12,7 +12,7 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial4.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/Tutorial4.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -94,3 +94,40 @@ This tutorial solution introduces an abstract class, Transformational, as the bl
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial4/Tutorial4/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial4
+│   README.md
+│   Tutorial4.sln
+│
+└───Tutorial4
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Transformational.h
+    │   Tutorial4.cpp
+    │   Tutorial4.h
+    │   Tutorial4.qrc
+    │   Tutorial4.ui
+    │   Tutorial4.vcxproj
+    │   Tutorial4.vcxproj.filters
+    │   Tutorial4.vcxproj.user
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial4.cpp
+        │   ui_Tutorial4.h
+        │
+        ├───Debug
+        │       moc_Tutorial4.cpp
+        │
+        └───Release
+                moc_Tutorial4.cpp
+

@@ -12,7 +12,7 @@ This tutorial solution introduces an timer with a timer event;
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >
 >> [Tutorial5.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/Tutorial5.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
@@ -100,3 +100,36 @@ This tutorial solution introduces an timer with a timer event;
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial5/Tutorial5/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial5
+│   README.md
+│   Tutorial5.sln
+│
+└───Tutorial5
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Transformational.h
+    │   Tutorial5.cpp
+    │   Tutorial5.h
+    │   Tutorial5.qrc
+    │   Tutorial5.ui
+    │   Tutorial5.vcxproj
+    │   Tutorial5.vcxproj.filters
+    │   Tutorial5.vcxproj.user
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial5.cpp
+        │   ui_Tutorial5.h
+        │
+        └───Release
+                moc_Tutorial5.cpp

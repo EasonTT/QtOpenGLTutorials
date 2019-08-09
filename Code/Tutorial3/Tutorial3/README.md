@@ -12,7 +12,7 @@ This tutorial solution introduces how to add other objects and translate it to a
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial3.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/Tutorial3.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -58,3 +58,36 @@ This tutorial solution introduces how to add other objects and translate it to a
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial3/Tutorial3/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial3
+│   README.md
+│   Tutorial3.sln
+│
+└───Tutorial3
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   main.cpp
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Tutorial3.cpp
+    │   Tutorial3.h
+    │   Tutorial3.qrc
+    │   Tutorial3.ui
+    │   Tutorial3.vcxproj
+    │   Tutorial3.vcxproj.filters
+    │   Tutorial3.vcxproj.user
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial3.cpp
+        │   ui_Tutorial3.h
+        │
+        ├───Debug
+        │       moc_Tutorial3.cpp
+        │
+        └───Release
+                moc_Tutorial3.cpp

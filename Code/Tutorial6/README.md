@@ -12,7 +12,7 @@ This tutorial solution introduces an camera and makes it able to interact with t
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial6.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/Tutorial6.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -116,3 +116,38 @@ This tutorial solution introduces an camera and makes it able to interact with t
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial6/Tutorial6/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial6
+│   README.md
+│   Tutorial6.sln
+│
+└───Tutorial6
+    │   Camera3D.cpp
+    │   Camera3D.h
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Transformational.h
+    │   Tutorial6.cpp
+    │   Tutorial6.h
+    │   Tutorial6.qrc
+    │   Tutorial6.ui
+    │   Tutorial6.vcxproj
+    │   Tutorial6.vcxproj.filters
+    │   Tutorial6.vcxproj.user
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial6.cpp
+        │   ui_Tutorial6.h
+        │
+        └───Release
+                moc_Tutorial6.cpp

@@ -12,7 +12,7 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial7.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Tutorial7.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -134,3 +134,47 @@ This tutorial solution introduces a skybox and render skybox with other objects 
 >> 
 >> [Skybox.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial7/Tutorial7/Skybox.vsh): The vertex shader projects skybox vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial7
+│   README.md
+│   Tutorial7.sln
+│
+└───Tutorial7
+    │   Camera3D.cpp
+    │   Camera3D.h
+    │   cube.jpg
+    │   Group3D.cpp
+    │   Group3D.h
+    │   main.cpp
+    │   Object.fsh
+    │   Object.vsh
+    │   README.md
+    │   SimpleObject3D.cpp
+    │   SimpleObject3D.h
+    │   Skybox.cpp
+    │   Skybox.fsh
+    │   Skybox.h
+    │   skybox.jpg
+    │   Skybox.vsh
+    │   Transformational.h
+    │   Tutorial7.cpp
+    │   Tutorial7.h
+    │   Tutorial7.qrc
+    │   Tutorial7.ui
+    │   Tutorial7.vcxproj
+    │   Tutorial7.vcxproj.filters
+    │   Tutorial7.vcxproj.user
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+        │   qrc_Tutorial7.cpp
+        │   ui_Tutorial7.h
+        │
+        ├───Debug
+        │       moc_Tutorial7.cpp
+        │
+        └───Release
+                moc_Tutorial7.cpp
+

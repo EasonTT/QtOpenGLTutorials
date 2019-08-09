@@ -12,7 +12,7 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
 * Visual Studio 2019
 * Qt 5.12.3
 
-# Solution Hierarchy:
+# Solution Documentation:
 > Form Files
 >> [Tutorial2.ui](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/Tutorial2.ui): Qt UI file, where QOpenGLWidget is promoted to Widget defined in Widget.h;
 >
@@ -48,3 +48,27 @@ This tutorial solution adds mouse events for rotation and updates fragment shade
 >>
 >> [VertexShader.vsh](https://github.com/jingyangcarl/QtOpenGLTutorials/blob/master/Code/Tutorial2/Tutorial2/VertexShader.vsh): The vertex shader projects vertices;
 >
+
+# Solution Hierarchy:
+./Tutorial2
+│   README.md
+│   Tutorial2.sln
+│
+└───Tutorial2
+    │   cube.jpg
+    │   FragmentShader.fsh
+    │   main.cpp
+    │   README.md
+    │   Tutorial2.cpp
+    │   Tutorial2.h
+    │   Tutorial2.qrc
+    │   Tutorial2.ui
+    │   Tutorial2.vcxproj
+    │   Tutorial2.vcxproj.filters
+    │   VertexShader.vsh
+    │   Widget.cpp
+    │   Widget.h
+    │
+    └───GeneratedFiles
+            qrc_Tutorial2.cpp
+            ui_Tutorial2.h
