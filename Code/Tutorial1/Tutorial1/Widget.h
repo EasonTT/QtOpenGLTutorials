@@ -15,15 +15,15 @@ struct Vertex {
 };
 
 class Widget :
-	public QOpenGLWidget{
+	public QOpenGLWidget {
 public:
 	Widget(QWidget* parent = 0);
 	~Widget();
 
 protected:
-	void initializeGL();
-	void resizeGL(int width, int height);
-	void paintGL();
+	void initializeGL(); // override from QOpenGLWidget
+	void resizeGL(int width, int height); // override from QOpenGLWidget
+	void paintGL(); // override from QOpenGLWidget
 
 	void initShaders();
 	void initCube(float width);
